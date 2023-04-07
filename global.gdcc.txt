@@ -1,0 +1,217 @@
+--------header
+version: 4
+instance_count: 1
+instance_offset: 4607096
+typedef_count: 0
+typedef_offset: 0
+stringhash_count: 0
+stringhash_offset: 0
+nametable_count: 1
+nametable_offset: 4607120
+total_size: 4607140
+Unknown[0]: 0 0x00000000
+Unknown[1]: 1 0x00000001
+Unknown[2]: 0 0x00000000
+Unknown[3]: 0 0x00000000
+Unknown[4]: 0 0x00000000
+
+--------comment
+xls_types.adf in  
+gamedatacollection.adf in  
+
+--------name_table
+name_table	0	GameDataCollection
+
+--------string_hash
+
+--------typedefs
+
+--------instances
+instances	60dd4065	178842fe	GameDataCollection	112	4606976	00000070-00464c70
+[
+  i:   0 o:     5936 s:     3504 h:00631104 ft:d74cc4cb vp:settings/charactertypes.binNone
+  i:   1 o:     9488 s:   131971 h:0374D3D7 ft:d74cc4cb vp:missions/missions_3.hpmissionscNone
+  i:   2 o:   141512 s:     3036 h:0987FAD6 ft:d74cc4cb vp:settings/hp_settings/reserve_5.binNone
+  i:   3 o:   144608 s:     3368 h:0AA98776 ft:d74cc4cb vp:settings/node_templates.binNone
+  i:   4 o:   148024 s:     4204 h:0BA770FE ft:d74cc4cb vp:climate/hp_trophyworld/audio_layers.worldaudioinfo_xmlcNone
+  i:   5 o:   152304 s:     1044 h:0E8A420A ft:d74cc4cb vp:settings/character_pfx_settings.binNone
+  i:   6 o:   153408 s:    49507 h:0FE39D5C ft:d74cc4cb vp:missions/missions_11.hpmissionscNone
+  i:   7 o:   202976 s:   142558 h:101598D1 ft:d74cc4cb vp:settings/hp_settings/animal_senses.binNone
+  i:   8 o:   345592 s:       56 h:10E75726 ft:d74cc4cb vp:settings/spawn_combatant_defs.binNone
+  i:   9 o:   345704 s:      768 h:115471C8 ft:d74cc4cb vp:settings/spawn_aircraft_defs.binNone
+  i:  10 o:   346528 s:      771 h:11792D83 ft:d74cc4cb vp:models/hp_model_locators/aspen_bush_04_lod1.lct_datacNone
+  i:  11 o:   347376 s:    26720 h:12A655DD ft:d74cc4cb vp:settings/hp_settings/reserve_11.binNone
+  i:  12 o:   374152 s:     7222 h:1508591F ft:d74cc4cb vp:settings/keymap_keyboard_justedit.binNone
+  i:  13 o:   381432 s:    33980 h:1556055C ft:d74cc4cb vp:settings/game_materials.binNone
+  i:  14 o:   415464 s:       56 h:162DA6CA ft:d74cc4cb vp:settings/spawn_boat_premium_defs.binNone
+  i:  15 o:   415576 s:    28604 h:195FBB6E ft:d74cc4cb vp:settings/hp_settings/animal_interest.binNone
+  i:  16 o:   444248 s:    55164 h:1AF7E409 ft:d74cc4cb vp:missions/missions_13.hpmissionscNone
+  i:  17 o:   499472 s:   143895 h:1B35BD8F ft:d74cc4cb vp:missions/mp_competitions.stringlookupNone
+  i:  18 o:   643424 s:    69139 h:1CE44467 ft:d74cc4cb vp:missions/missions_10.hpmissionscNone
+  i:  19 o:   712624 s:     4164 h:1D8E7797 ft:d74cc4cb vp:settings/weathersettings.binNone
+  i:  20 o:   716840 s:      220 h:1E31F03F ft:d74cc4cb vp:settings/damage_types.binNone
+  i:  21 o:   717112 s:    27152 h:1EFCDC02 ft:d74cc4cb vp:settings/hp_settings/reserve_10.binNone
+  i:  22 o:   744320 s:     3692 h:1F10DBBA ft:d74cc4cb vp:climate/hp_pacific_northwest/audio_layers.worldaudioinfo_xmlcNone
+  i:  23 o:   748096 s:   263950 h:209F9D79 ft:d74cc4cb vp:settings/hp_settings/animal_internal_organs.binNone
+  i:  24 o:  1012112 s:     2241 h:235C1B90 ft:d74cc4cb vp:settings/lightenumplane.binNone
+  i:  25 o:  1014408 s:     1864 h:244AC773 ft:d74cc4cb vp:settings/grassbillboards.binNone
+  i:  26 o:  1016320 s:     4052 h:25FABB46 ft:d74cc4cb vp:climate/hp_siberia/audio_layers.worldaudioinfo_xmlcNone
+  i:  27 o:  1020448 s:      796 h:263CC4C2 ft:d74cc4cb vp:settings/crowd_voiceover.binNone
+  i:  28 o:  1021296 s:       60 h:2656D922 ft:d74cc4cb vp:settings/texturemanager.binNone
+  i:  29 o:  1021408 s:      113 h:26D07C5C ft:d74cc4cb vp:settings/build_version.binNone
+  i:  30 o:  1021576 s:     4388 h:28705B0A ft:d74cc4cb vp:climate/hp_nz/audio_layers.worldaudioinfo_xmlcNone
+  i:  31 o:  1026032 s:     9902 h:2A3D9293 ft:d74cc4cb vp:settings/hp_settings/characters.binNone
+  i:  32 o:  1035992 s:     9848 h:2A755F65 ft:d74cc4cb vp:diate/animations/ragdoll/bloodhound_sm.ragdollsettingsNone
+  i:  33 o:  1045912 s:     5782 h:2A8F0C64 ft:d74cc4cb vp:settings/hp_settings/player_initial_loadout.binNone
+  i:  34 o:  1051760 s:      940 h:2C5FDE22 ft:d74cc4cb vp:settings/hp_settings/default_color_settings.binNone
+  i:  35 o:  1052768 s:     1171 h:2C69993F ft:d74cc4cb vp:settings/hp_settings/trophy_lodge_settings.binNone
+  i:  36 o:  1054008 s:     1906 h:2DD1EBF4 ft:d74cc4cb vp:settings/smartobjectsettings.binNone
+  i:  37 o:  1055976 s:      248 h:2DDB57C6 ft:d74cc4cb vp:settings/effects_budget_pools.binNone
+  i:  38 o:  1056280 s:      486 h:2EA5DE24 ft:d74cc4cb vp:settings/lightenumtrain.binNone
+  i:  39 o:  1056816 s:      348 h:2F49CC29 ft:d74cc4cb vp:settings/post_effects.binNone
+  i:  40 o:  1057216 s:      182 h:34B61A9A ft:d74cc4cb vp:settings/spawn_gameplay_defs.binNone
+  i:  41 o:  1057456 s:     1964 h:352FF282 ft:d74cc4cb vp:settings/worlddecorations.binNone
+  i:  42 o:  1059472 s:    28072 h:369D7D5A ft:d74cc4cb vp:settings/hp_settings/reserve_12.binNone
+  i:  43 o:  1087600 s:     2836 h:36B2DB94 ft:d74cc4cb vp:settings/hp_settings/dog_data.binNone
+  i:  44 o:  1090496 s:     3068 h:391B0A15 ft:d74cc4cb vp:settings/hp_settings/reserve_7.binNone
+  i:  45 o:  1093624 s:    38432 h:3A09B914 ft:d74cc4cb vp:settings/hp_settings/reserve_14.binNone
+  i:  46 o:  1132112 s:    16728 h:3A614426 ft:d74cc4cb vp:settings/hp_settings/mission_restoration.binNone
+  i:  47 o:  1148904 s:      676 h:3A93BDA5 ft:d74cc4cb vp:settings/spawn_weapon_proto_defs.binNone
+  i:  48 o:  1149640 s:    52526 h:3A9EF0A1 ft:d74cc4cb vp:missions/missions_12.hpmissionscNone
+  i:  49 o:  1202224 s:    23396 h:3D991581 ft:d74cc4cb vp:settings/hp_settings/reserve_4.binNone
+  i:  50 o:  1225680 s:    13553 h:3FD32CF8 ft:d74cc4cb vp:settings/spawn_sight_defs.binNone
+  i:  51 o:  1239288 s:      144 h:402AE4F8 ft:d74cc4cb vp:settings/hp_settings/animal_call.binNone
+  i:  52 o:  1239488 s:    21040 h:4107520A ft:d74cc4cb vp:settings/hp_settings/reserve_2.binNone
+  i:  53 o:  1260584 s:    33910 h:41D6C122 ft:d74cc4cb vp:settings/hp_settings/player_skills.binNone
+  i:  54 o:  1294552 s:      256 h:43F5FB2E ft:d74cc4cb vp:settings/eitemcategory.binNone
+  i:  55 o:  1294856 s:      144 h:44948A23 ft:d74cc4cb vp:settings/benchmarks.binNone
+  i:  56 o:  1295040 s:      174 h:44A8A1FF ft:d74cc4cb vp:settings/locator.binNone
+  i:  57 o:  1295256 s:     3692 h:4558CD3B ft:d74cc4cb vp:climate/hp_trophyworld_3/audio_layers.worldaudioinfo_xmlcNone
+  i:  58 o:  1299032 s:    24347 h:46263F5B ft:d74cc4cb vp:settings/spawn_weapon_defs.binNone
+  i:  59 o:  1323432 s:    10355 h:475F26A2 ft:d74cc4cb vp:settings/game_materials_all_asphalt.binNone
+  i:  60 o:  1333848 s:     1259 h:47F2EC1B ft:d74cc4cb vp:settings/pdaicontypetexttags.binNone
+  i:  61 o:  1335168 s:      132 h:4D50BA15 ft:d74cc4cb vp:settings/hp_settings/editbitmap_settings.binNone
+  i:  62 o:  1335368 s:      868 h:4EE7E00B ft:d74cc4cb vp:settings/factions.binNone
+  i:  63 o:  1336280 s:    16568 h:4F702D91 ft:d74cc4cb vp:settings/hp_settings/hybrid_mount_recipes.binNone
+  i:  64 o:  1352912 s:     2268 h:50170042 ft:d74cc4cb vp:settings/landscape_effects.binNone
+  i:  65 o:  1355232 s:     1154 h:50DA72DC ft:d74cc4cb vp:settings/hp_settings/animal_flying_settings.binNone
+  i:  66 o:  1356456 s:     2710 h:517AB135 ft:d74cc4cb vp:settings/ui_settingsscreen_definitions.binNone
+  i:  67 o:  1359232 s:   104310 h:51D2FE9C ft:d74cc4cb vp:settings/hp_settings/dog_stats.binNone
+  i:  68 o:  1463600 s:       56 h:52BE8753 ft:d74cc4cb vp:settings/spawn_civilian_defs.binNone
+  i:  69 o:  1463712 s:      800 h:52C5B894 ft:d74cc4cb vp:settings/ammunition.binNone
+  i:  70 o:        0 s:        0 h:55A039FD ft:d74cc4cb vp:missions/achievements.stringlookupNone
+  i:  71 o:  1464608 s:    10382 h:5788B497 ft:d74cc4cb vp:settings/keymap_keyboard.binNone
+  i:  72 o:  1475040 s:       76 h:5927C2CD ft:d74cc4cb vp:settings/hp_settings/interest_area_manager_settings.binNone
+  i:  73 o:  1475192 s:     1536 h:59AEC615 ft:d74cc4cb vp:settings/aiavoidancetypes.binNone
+  i:  74 o:  1476776 s:       60 h:5C93D498 ft:d74cc4cb vp:settings/sun.binNone
+  i:  75 o:  1476880 s:       56 h:6019FCB3 ft:d74cc4cb vp:settings/spawn_aircraft_proto_defs.binNone
+  i:  76 o:  1476992 s:    42118 h:651D89A7 ft:d74cc4cb vp:settings/hp_settings/equipment_stats_ui.binNone
+  i:  77 o:  1519176 s:     2987 h:65724EBE ft:d74cc4cb vp:settings/lightenumboat.binNone
+  i:  78 o:  1522216 s:      112 h:664BC7A3 ft:d74cc4cb vp:settings/asset_areas_color_info.binNone
+  i:  79 o:  1522384 s:      952 h:675F467E ft:d74cc4cb vp:settings/voice_over_definitions.binNone
+  i:  80 o:  1523392 s:      180 h:69306179 ft:d74cc4cb vp:settings/vehicletackleparams.binNone
+  i:  81 o:  1523632 s:    61230 h:69FC3551 ft:d74cc4cb vp:settings/hp_settings/player_rewards.binNone
+  i:  82 o:  1584920 s:      912 h:6A617F64 ft:d74cc4cb vp:settings/road_presets.binNone
+  i:  83 o:  1585880 s:       56 h:6C8A9907 ft:d74cc4cb vp:settings/spawn_weapon_premium_defs.binNone
+  i:  84 o:  1585992 s:     4720 h:6D944DAC ft:d74cc4cb vp:settings/asset_memory_budgets.binNone
+  i:  85 o:  1590768 s:      822 h:6DB2AA83 ft:d74cc4cb vp:settings/sheldonservice.binNone
+  i:  86 o:  1591640 s:    30034 h:6E7D5CA0 ft:d74cc4cb vp:settings/spawn_clues_defs.binNone
+  i:  87 o:  1621728 s:      396 h:724EA14C ft:d74cc4cb vp:settings/spawn_dog_defs.binNone
+  i:  88 o:  1622176 s:       56 h:7284FB75 ft:d74cc4cb vp:settings/spawn_aircraft_premium_defs.binNone
+  i:  89 o:  1622296 s:    51740 h:7433B547 ft:d74cc4cb vp:missions/missions_9.hpmissionscNone
+  i:  90 o:  1674088 s:     1624 h:74ABD68F ft:d74cc4cb vp:settings/vehicletypes.binNone
+  i:  91 o:  1675760 s:    92777 h:76ECED24 ft:d74cc4cb vp:missions/missions_8.hpmissionscNone
+  i:  92 o:  1768592 s:     1996 h:78A5E94C ft:d74cc4cb vp:settings/missionruletemplates.binNone
+  i:  93 o:  1770648 s:     5340 h:78AB94FC ft:d74cc4cb vp:settings/hp_settings/treestand_compatible_trees.binNone
+  i:  94 o:  1776064 s:     2696 h:7922D689 ft:d74cc4cb vp:missions/missions_trophy_2.hpmissionscNone
+  i:  95 o:  1778816 s:     3214 h:7A82F83B ft:d74cc4cb vp:settings/hp_settings/dog_focus_bond_states.binNone
+  i:  96 o:  1782096 s:     1140 h:7AB4DD13 ft:d74cc4cb vp:settings/road_logic.binNone
+  i:  97 o:  1783280 s:     2340 h:7CB10B74 ft:d74cc4cb vp:settings/hp_settings/reserve_15.binNone
+  i:  98 o:  1785680 s:      771 h:7FB3449A ft:d74cc4cb vp:models/hp_model_locators/aspen_bush_03_lod1.lct_datacNone
+  i:  99 o:  1786528 s:      545 h:8152CA57 ft:d74cc4cb vp:settings/spawn_device_defs.binNone
+  i: 100 o:  1787128 s:     3644 h:8159BC74 ft:d74cc4cb vp:climate/hp_africa/audio_layers.worldaudioinfo_xmlcNone
+  i: 101 o:  1790848 s:      284 h:86526F6A ft:d74cc4cb vp:settings/collectitemtypes.binNone
+  i: 102 o:  1791184 s:     3232 h:89742A6C ft:d74cc4cb vp:settings/creatures.binNone
+  i: 103 o:  1794456 s:     4471 h:8A397AB3 ft:d74cc4cb vp:settings/enemytypespawnsettings.binNone
+  i: 104 o:  1798984 s:     1360 h:8D3FDDB6 ft:d74cc4cb vp:settings/turn_taker.binNone
+  i: 105 o:  1800384 s:     4380 h:8DA6A4D1 ft:d74cc4cb vp:climate/hp_nh/audio_layers.worldaudioinfo_xmlcNone
+  i: 106 o:  1804832 s:    34238 h:90F5EAB1 ft:d74cc4cb vp:missions/mp_competitions.hpmissionscNone
+  i: 107 o:  1839128 s:   673903 h:9123C19E ft:d74cc4cb vp:missions/missions.stringlookupNone
+  i: 108 o:  2513080 s:     2580 h:91D8BE75 ft:d74cc4cb vp:settings/gamestaterun.binNone
+  i: 109 o:  2515712 s:     1195 h:91E2A533 ft:d74cc4cb vp:settings/spawn_vehicle_proto_defs.binNone
+  i: 110 o:  2516968 s:   103078 h:93388227 ft:d74cc4cb vp:settings/hp_settings/tooltip_icon_data.binNone
+  i: 111 o:  2620112 s:    29088 h:93663D9B ft:d74cc4cb vp:settings/hp_settings/reserve_8.binNone
+  i: 112 o:  2649256 s:   147461 h:9499BACB ft:d74cc4cb vp:missions/missions.hpmissionscNone
+  i: 113 o:  2796768 s:     2166 h:9522BFEE ft:d74cc4cb vp:settings/hp_settings/resting_data.binNone
+  i: 114 o:  2798992 s:     2960 h:96C8CA64 ft:d74cc4cb vp:settings/player.binNone
+  i: 115 o:  2801992 s:      934 h:98A33815 ft:d74cc4cb vp:settings/spawn_road_decoration_defs.binNone
+  i: 116 o:  2802984 s:    27372 h:9911D365 ft:d74cc4cb vp:settings/hp_settings/reserve_3.binNone
+  i: 117 o:  2830416 s:     1481 h:996BE6A7 ft:d74cc4cb vp:settings/lightenumhelicopter.binNone
+  i: 118 o:  2831960 s:    36320 h:9B171200 ft:d74cc4cb vp:settings/spawn_animals_defs.binNone
+  i: 119 o:  2868328 s:    29725 h:9B380746 ft:d74cc4cb vp:settings/hp_settings/animal_clue_types.binNone
+  i: 120 o:  2898120 s:     4204 h:9B6C96F7 ft:d74cc4cb vp:climate/hp_germany_farmland_fall/audio_layers.worldaudioinfo_xmlcNone
+  i: 121 o:  2902416 s:       56 h:9B9C520C ft:d74cc4cb vp:settings/spawn_vehicle_premium_defs.binNone
+  i: 122 o:  2902528 s:      385 h:A17EA613 ft:d74cc4cb vp:settings/spawn_interaction_defs.binNone
+  i: 123 o:  2902976 s:    30977 h:A3F8559D ft:d74cc4cb vp:settings/settlements.binNone
+  i: 124 o:  2934008 s:     3748 h:A6772C34 ft:d74cc4cb vp:settings/hp_settings/placeable_item_properties.binNone
+  i: 125 o:  2937832 s:     2238 h:A81DF502 ft:d74cc4cb vp:settings/hp_settings/player_deep_water_handling.binNone
+  i: 126 o:  2940144 s:     3500 h:ACF20485 ft:d74cc4cb vp:climate/hp_delta/audio_layers.worldaudioinfo_xmlcNone
+  i: 127 o:  2943720 s:    24868 h:ADF1576C ft:d74cc4cb vp:settings/hp_settings/reserve_1.binNone
+  i: 128 o:  2968648 s:      472 h:AFF3C6A7 ft:d74cc4cb vp:settings/hp_settings/animal_settings.binNone
+  i: 129 o:  2969184 s:   125727 h:B0E88E20 ft:d74cc4cb vp:missions/achievements.hpmissionscNone
+  i: 130 o:  3094968 s:     2696 h:B3A0C19B ft:d74cc4cb vp:missions/missions_6.hpmissionscNone
+  i: 131 o:  3097712 s:    66692 h:B6D11BC2 ft:d74cc4cb vp:missions/missions_14.hpmissionscNone
+  i: 132 o:  3164464 s:       56 h:B8600D64 ft:d74cc4cb vp:settings/spawn_encounter_defs.binNone
+  i: 133 o:  3164576 s:     1645 h:B9500E2A ft:d74cc4cb vp:settings/hp_settings/reserves.binNone
+  i: 134 o:  3166280 s:      440 h:BC77C5E0 ft:d74cc4cb vp:settings/spawn_boat_defs.binNone
+  i: 135 o:  3166768 s:      165 h:BCEF5300 ft:d74cc4cb vp:settings/hp_settings/world_object_types.binNone
+  i: 136 o:  3167000 s:     6650 h:BD2061CB ft:d74cc4cb vp:settings/spawn_effect_defs.binNone
+  i: 137 o:  3173704 s:    25536 h:BE270CE7 ft:d74cc4cb vp:settings/hp_settings/reserve_0.binNone
+  i: 138 o:  3199296 s:     3790 h:BF18C360 ft:d74cc4cb vp:settings/hp_settings/dog_status.binNone
+  i: 139 o:  3203144 s:     2160 h:BF32E8D4 ft:d74cc4cb vp:settings/worldsim.binNone
+  i: 140 o:  3205344 s:    19226 h:C03B59CD ft:d74cc4cb vp:settings/spawn_equipment_defs.binNone
+  i: 141 o:  3224632 s:   102287 h:C1E69AED ft:d74cc4cb vp:missions/missions_5.hpmissionscNone
+  i: 142 o:  3326968 s:    42143 h:C24A805E ft:d74cc4cb vp:settings/hp_settings/statistics.stringlookupNone
+  i: 143 o:  3369176 s:     7438 h:C4A85389 ft:d74cc4cb vp:settings/hp_settings/dog_traits.binNone
+  i: 144 o:  3376672 s:     3692 h:C56D1F96 ft:d74cc4cb vp:climate/hp_yukon/audio_layers.worldaudioinfo_xmlcNone
+  i: 145 o:  3380440 s:     3492 h:C6ADE4FD ft:d74cc4cb vp:climate/hp_iberia/audio_layers.worldaudioinfo_xmlcNone
+  i: 146 o:  3384008 s:    23348 h:CB884520 ft:d74cc4cb vp:settings/hp_settings/reserve_6.binNone
+  i: 147 o:  3407416 s:    27745 h:CE48F537 ft:d74cc4cb vp:settings/hp_settings/achievements.binNone
+  i: 148 o:  3435224 s:     4600 h:CEFC405F ft:d74cc4cb vp:settings/road_rendering.binNone
+  i: 149 o:  3439872 s:      538 h:D13267C7 ft:d74cc4cb vp:settings/roaddecorationtypes.binNone
+  i: 150 o:  3440472 s:    10011 h:D3DD42DE ft:d74cc4cb vp:settings/keymap_gamepad.binNone
+  i: 151 o:  3450536 s:   283744 h:D604B881 ft:d74cc4cb vp:settings/hp_settings/equipment_data.binNone
+  i: 152 o:  3734336 s:     1992 h:D74BFE6D ft:d74cc4cb vp:settings/spawn_missions_defs.binNone
+  i: 153 o:  3736384 s:    27676 h:D9C580DF ft:d74cc4cb vp:settings/spawn_placeables_defs.binNone
+  i: 154 o:  3764120 s:     2406 h:D9F72F35 ft:d74cc4cb vp:settings/hp_settings/global_simulation.binNone
+  i: 155 o:  3766592 s:     1251 h:DB96D098 ft:d74cc4cb vp:settings/lightenumbike.binNone
+  i: 156 o:  3767896 s:     3644 h:DE243DA8 ft:d74cc4cb vp:climate/hp_trophyworld_2/audio_layers.worldaudioinfo_xmlcNone
+  i: 157 o:  3771624 s:     3476 h:DE2ECF8C ft:d74cc4cb vp:climate/hp_mexico/audio_layers.worldaudioinfo_xmlcNone
+  i: 158 o:  3775176 s:     3836 h:DEBD26B4 ft:d74cc4cb vp:climate/hp_finland/audio_layers.worldaudioinfo_xmlcNone
+  i: 159 o:  3779088 s:     6856 h:E00F53D7 ft:d74cc4cb vp:settings/player_variations.binNone
+  i: 160 o:  3785992 s:       56 h:E1D866A6 ft:d74cc4cb vp:settings/spawn_train_defs.binNone
+  i: 161 o:  3786096 s:    68142 h:E6311919 ft:d74cc4cb vp:settings/hp_settings/contextual_help/contextual_settings.binNone
+  i: 162 o:  3854320 s:   120948 h:E70461A3 ft:d74cc4cb vp:missions/missions_4.hpmissionscNone
+  i: 163 o:  3975320 s:   142365 h:E85B2F1A ft:d74cc4cb vp:missions/missions_2.hpmissionscNone
+  i: 164 o:  4117736 s:      285 h:E9CD2B06 ft:d74cc4cb vp:settings/hp_settings/apex_confrontation_settings.binNone
+  i: 165 o:  4118096 s:    48952 h:EA9C0C51 ft:d74cc4cb vp:settings/hp_settings/reserve_13.binNone
+  i: 166 o:  4167104 s:     3660 h:EBA2EB62 ft:d74cc4cb vp:climate/hp_patagonia/audio_layers.worldaudioinfo_xmlcNone
+  i: 167 o:  4170840 s:      720 h:EBD408E0 ft:d74cc4cb vp:settings/camera_debugger.binNone
+  i: 168 o:  4171608 s:       60 h:EC135E6E ft:d74cc4cb vp:settings/hp_settings/hp_vegetation_damage_data/cactii_boy.binNone
+  i: 169 o:  4171752 s:     1928 h:EE3A4AAE ft:d74cc4cb vp:settings/spawn_vehicle_defs.binNone
+  i: 170 o:  4173728 s:    17459 h:F0FD9053 ft:d74cc4cb vp:settings/spawn_prop_defs.binNone
+  i: 171 o:  4191240 s:     1644 h:F1DF3D4B ft:d74cc4cb vp:settings/lightenumcar.binNone
+  i: 172 o:  4192936 s:       94 h:F2D6F09B ft:d74cc4cb vp:settings/hp_settings/fast_forward.binNone
+  i: 173 o:  4193088 s:    21043 h:F30E215F ft:d74cc4cb vp:settings/spawn_ammunition_defs.binNone
+  i: 174 o:  4214192 s:    77535 h:F4BF4737 ft:d74cc4cb vp:missions/missions_7.hpmissionscNone
+  i: 175 o:  4291776 s:      415 h:F4DE8297 ft:d74cc4cb vp:settings/spawn_boat_proto_defs.binNone
+  i: 176 o:  4292248 s:     3324 h:F6A7EBF2 ft:d74cc4cb vp:climate/hp_rockies/audio_layers.worldaudioinfo_xmlcNone
+  i: 177 o:  4295648 s:     3554 h:F759433D ft:d74cc4cb vp:settings/spawn_budget_pools.binNone
+  i: 178 o:  4299256 s:    35982 h:F7AF7D30 ft:d74cc4cb vp:settings/hp_settings/notification_popup_data.binNone
+  i: 179 o:  4335312 s:      717 h:F908AEC0 ft:d74cc4cb vp:settings/hp_settings/animal_patience_settings.binNone
+  i: 180 o:  4336104 s:     2572 h:FA3A55A0 ft:d74cc4cb vp:settings/ui_fonts.binNone
+  i: 181 o:  4338720 s:    23966 h:FB7F7073 ft:d74cc4cb vp:settings/hp_settings/player_skill_trees.binNone
+  i: 182 o:  4362752 s:   216222 h:FD4FBB2F ft:d74cc4cb vp:settings/hp_settings/codex_data.binNone
+  i: 183 o:  4579032 s:    27168 h:FDBE32A7 ft:d74cc4cb vp:settings/hp_settings/reserve_9.binNone
+]
+

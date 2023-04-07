@@ -1,0 +1,5 @@
+venv
+.working
+__pycache__
+cotw.egg-info
+build
