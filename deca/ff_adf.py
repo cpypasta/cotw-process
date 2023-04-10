@@ -588,7 +588,7 @@ def read_instance(
         if type_id not in map_typedef:
             raise EDecaMissingAdfType(type_id)
         type_def = map_typedef[type_id]
-
+        
         if type_def.metatype == 0:  # Primative
             raise EDecaMissingAdfType(type_id)
         elif type_def.metatype == 1:  # Structure
@@ -672,7 +672,7 @@ def read_instance(
 
             if opos is not None:
                 buffer_pos = opos
-
+            
             v = AdfValue(v, type_id, dpos + abs_offset, offset + abs_offset)
         elif type_def.metatype == 7:  # BitField
             if type_def.size == 1:
@@ -823,7 +823,7 @@ class Adf:
 
         return sbuf
 
-    def deserialize(self, fp, map_typedef=None, process_instances=True):
+    def deserialize(self, fp, map_typedef=None, process_instances=True):      
         if map_typedef is None:
             map_typedef = {}
 

@@ -5,3 +5,10 @@ cotw.egg-info
 build
 *.bin
 *.ee
+*.bin.txt
+*.ammotunec
+*.ammotunec.txt
+*.bl
+*.blo
+*.vmodc
+*.vmodc.txt
