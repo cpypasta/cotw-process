@@ -7,6 +7,8 @@ def main():
   filename = sys.argv[2]
   if type == "adf":
     adf.load_adf(Path.cwd() / filename)
+  elif type == "adfc":
+    adf.load_adfc(Path.cwd() / filename)
   elif type == "gdcc":
     adf.load_global_gdcc(Path.cwd() / filename)
   elif type == "sarc":

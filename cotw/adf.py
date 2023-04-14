@@ -30,7 +30,7 @@ def _parse_adf_file(filename: Path, suffix: str = None, verbose = False) -> Adf:
     _save_file(txt_filename, bytearray(content, 'utf-8'), verbose)            
     return obj
 
-def _decompress_adf_file(filename: Path, verbose = False) -> None:
+def _decompress_adf_file(filename: Path, verbose = False) -> Path:
     # read entire adf file
     data_bytes = _read_file(filename, verbose)
     data_bytes = bytearray(data_bytes)
@@ -44,13 +44,14 @@ def _decompress_adf_file(filename: Path, verbose = False) -> None:
     decompressed_data_bytes = bytearray(decompressed_data_bytes)
 
     # split out compression header
-    decompressed_header = decompressed_data_bytes[0:5]
     decompressed_data_bytes = decompressed_data_bytes[5:]
 
     # save uncompressed adf data to file
     parsed_basename = filename.name
     adf_file = Path.cwd() / f".working/{parsed_basename}_sliced"
-    _save_file(adf_file, decompressed_data_bytes, verbose)  
+    _save_file(adf_file, decompressed_data_bytes, verbose) 
+
+    return adf_file 
 
 def _cell_format(type: int) -> str:
   if type == 0:
@@ -74,10 +75,11 @@ def parse_adf(filename: Path, suffix: str = None, verbose = False) -> Adf:
         print(f"Parsing {filename}")
     return _parse_adf_file(filename, suffix, verbose=verbose)
 
-def load_adfb(filename: Path, verbose = False) -> Adf:
-    data = _decompress_adf_file(filename, verbose=verbose)
-    adf = parse_adf(data.filename, verbose=verbose)
-    (Path.cwd() / f".working/{filename.name}_sliced").unlink()
+def load_adfc(filename: Path, verbose = False) -> Adf:
+    data_filename = _decompress_adf_file(filename, verbose=verbose)
+    adf = parse_adf(data_filename, verbose=verbose)
+    # data_filename.unlink()
+    # data_filename.parent.rmdir()
     return adf
 
 def load_adf(filename: Path, verbose = False) -> Adf:

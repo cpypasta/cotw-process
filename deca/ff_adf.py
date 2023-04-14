@@ -76,7 +76,8 @@ class MemberDef:
         self.default_value = None
 
     def deserialize(self, f, nt):
-        self.name = nt[f.read_u64()][1]
+        name_index = f.read_u64()
+        self.name = nt[name_index][1]
         self.name_utf8 = self.name.decode('utf-8')
         self.type_hash = f.read_u32()
         self.size = f.read_u32()
@@ -131,11 +132,12 @@ class TypeDef:
         self.size = f.read_u32()
         self.alignment = f.read_u32()
         self.type_hash = f.read_u32()
-        self.name = nt[f.read_u64()][1]
+        name_index = f.read_u64()
+        self.name = nt[name_index][1]
         self.flags = f.read_u32()
         self.element_type_hash = f.read_u32()
         self.element_length = f.read_u32()
-
+       
         if self.metatype == 0:  # Primative
             pass
         elif self.metatype == 1:  # Structure
@@ -428,7 +430,8 @@ def adf_format(v, type_map, indent=0):
         return s
     else:
         comment = None
-        return '  ' * indent + f'{v}{comment}\n'
+        # return '  ' * indent + f'{v}{comment}\n'
+        return '  ' * indent + f'{v}\n'
 
 def adf_value_extract(v):
     if isinstance(v, AdfValue):
