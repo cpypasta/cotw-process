@@ -1,0 +1,53 @@
+{
+  "offset": [
+    282736,
+    282760
+  ],
+  "instances": [
+    {
+      "offset": [
+        96,
+        282728
+      ],
+      "size": 282632,
+      "0": {
+        "AlreadyConverted": {
+          "value": "Primitive",
+          "offset": [
+            96,
+            97
+          ]
+        },
+        "Populations": {
+          "value": [],
+          "offset": [
+            104,
+            152
+          ]
+        },
+        "HuntingPressureMap": {
+          "value": [
+            {
+              "value": "Primitive",
+              "offset": [
+                217096,
+                282632
+              ]
+            }
+          ],
+          "offset": [
+            120,
+            282752
+          ]
+        },
+        "ReserveSeed": {
+          "value": "Primitive",
+          "offset": [
+            136,
+            180
+          ]
+        }
+      }
+    }
+  ]
+}
