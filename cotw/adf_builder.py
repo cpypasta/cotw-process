@@ -80,6 +80,7 @@ def read_typedef(header: bytearray, offset: int, nametables: List[str]) -> Tuple
   header_size = 36
   member_size = 32
   metatype = read_u32(header[0:4])
+  size = read_u32(header[4:8])
   type_hash = read_u32(header[12:16])
   name_index = read_u64(header[16:24])
   element_type_hash = read_u32(header[28:32])
@@ -98,6 +99,7 @@ def read_typedef(header: bytearray, offset: int, nametables: List[str]) -> Tuple
       "type_hash": type_hash,
       "start": offset, 
       "end": offset + structure_size,
+      "size": size,
       "members": members
     })
   elif metatype == 0:
@@ -131,6 +133,7 @@ def find_typedef_offset(data: bytearray, typedef_offset: int, count: int, nameta
     type_map[offset["type_hash"]] = { 
       "name": offset["name"], 
       "metatype": offset["metatype"],
+      "size": offset["size"] if "size" in offset else None,
       "element_type_hash": offset["element_type_hash"] if "element_type_hash" in offset else None,
       "members": offset["members"] if "members" in offset else []
     }
@@ -152,62 +155,66 @@ def get_primitive_size(type_id: int) -> int:
   else:
     return 4
 
-"""
-only primitives and arrays read bytes
-"""
 def read_instance(data: bytearray, offset: int, pointer: int, type_id: int, type_map: dict) -> dict:
   value = None
   pos = offset+pointer
+  
+  # if pos == 150728:
+  #   print(pos, type_id, type_map[type_id] if type_id in type_map else None)
+  
   if type_id in PRIMITIVES:
-    value = "Primitive"
-    pointer += get_primitive_size(type_id)
+    primitive_size = get_primitive_size(type_id)
+    value = f"Primitive ({primitive_size}, {pos})"
+    pointer += primitive_size # TODO: READ
   else:
     type_def = type_map[type_id]
     if type_def["metatype"] == STRUCTURE:
       value = {}
+      value["structure_offset"] = (pos, pos+type_def["size"])
       org_pointer = pointer
       for m in type_def["members"]:
         m_offset = m["offset"]
-        m_pos = pos + m_offset
         pointer = org_pointer + m_offset
         v = read_instance(data, offset, pointer, int(m["type_hash"]), type_map)
         value[m["name"]] = { 
-          "value": v[0], 
-          "offset": (m_pos, m_pos + v[1])
+          "value": v[0]
         }
-      pointer += m["size"]
+      pointer = org_pointer + type_def["size"] # TODO: READ
     elif type_def["metatype"] == ARRAY:
-      array_offset = read_u32(data[pos:pos+4])
-      flags = read_u32(data[pos+4:pos+8])
+      array_offset = read_u32(data[pos:pos+4]) # within the instance data, this and length are the only values that would need to be updated
       length = read_u32(data[pos+8:pos+12])
+      array_header_size = 12
       org_pos = pos
-      pointer += 12
+      pointer += array_header_size # TODO: READ
+      org_pointer = pointer
       pos = offset+pointer
       value = { "Array": { 
         "name": type_def["name"], 
-        "offset": (org_pos, org_pos+12),
-        "length": length, 
-        "flags": flags 
+        "header_offset": (org_pos, org_pos+array_header_size),
+        "length": length
       }}
       pointer = array_offset
       
-      value = []
-      element_type = type_def["element_type_hash"]
-      if element_type in PRIMITIVES:
-        primitive_size = get_primitive_size(element_type)
-        array_size = primitive_size * length  
-        value.append({ "value": "Primitive", "offset": (pointer, pointer+array_size) })
-        pointer = pointer + array_size  
-      else:      
-        None
-        # for i in range(length):
-        #   v, new_pointer = read_instance(data, offset, pointer, int(element_type), type_map)
-        #   # print(v)
-        #   value.append({
-        #     "value": v,
-        #     "offset": (pointer, new_pointer)
-        #   })
-        #   pointer = new_pointer
+      if length > 0:
+        element_type = type_def["element_type_hash"]
+        
+        if element_type in PRIMITIVES:
+          primitive_size = get_primitive_size(element_type)
+          value["Array"]["element_size"] = primitive_size
+          array_size = primitive_size * length
+          value["Array"]["type"] = f"Primitive ({primitive_size})"
+          value["Array"]["array_offset"] = (offset+pointer, offset+pointer+array_size)
+        else:     
+          new_pointer = pointer
+          values = []
+          for i in range(length):
+            v, new_pointer = read_instance(data, offset, new_pointer, int(element_type), type_map)
+            values.append(v)
+          value["Array"]["type"] = "Structure"
+          value["Array"]["array_offset"] = (offset+pointer, offset+new_pointer)
+          value["Array"]["values"] = values
+      
+      pointer = org_pointer
     else:
       print(f"Unknown metatype: {type_def['metatype']}")
   
@@ -232,6 +239,9 @@ def find_instance_offset(data: bytearray, offset: int, count: int, nametables: L
     "offset": (offset, offset + count*instance_header_size),
     "instances": instances
   }
+  
+def find_population_array_offsets():
+  None
 
 def break_apart(filename: Path) -> None:
   data = bytearray(filename.read_bytes())
@@ -255,28 +265,35 @@ def break_apart(filename: Path) -> None:
   type_map = typedef_offsets["type_map"]
   typedef = data[typedef_offsets["start"]:typedef_offsets["end"]]
   
-  # print(json.dumps(typedef_offsets, indent=2))
+  (Path.cwd() / "typedef.json").write_text(json.dumps(typedef_offsets, indent=2))
   
   instance_offsets = find_instance_offset(data, instance_offset, instance_count, nametables, type_map)
   instances = data[instance_offsets["offset"][0]:instance_offsets["offset"][1]]
   
-  print(json.dumps(instance_offsets, indent=2))
+  (Path.cwd() / "inst.json").write_text(json.dumps(instance_offsets, indent=2))
+  
+  """
+  find population belonging to species (i can get the hash ids from apc index per reserve mappings)
+  find a animals array within a group within population to add new animal
+    find last group within population, and append to animal array
+  find all arrays after animal array to update offsets
+  """
   
   # print(total_size)
-  # print(json.dumps({
-  #   "header_start": 0,
-  #   "header_end": 64,
-  #   "comment_start": 64,
-  #   "comment_end": 64 + comment_size,
-  #   "instance_start": instance_offsets["instances"][0]["offset"],
-  #   "instance_end": instance_offsets["instances"][0]["offset"] + instance_offsets["instances"][0]["size"],
-  #   "instance_header_start": instance_offset,
-  #   "instance_header_end": instance_offsets["end"],    
-  #   "typedef_start": typedef_offset,
-  #   "typedef_end": typedef_offsets["end"],    
-  #   "nametable_start": nametable_offset,
-  #   "nametable_end": nametable_offset+nametable_size
-  # }, indent=2))
+  print(json.dumps({
+    "header_start": 0,
+    "header_end": 64,
+    "comment_start": 64,
+    "comment_end": 64 + comment_size,
+    "instance_start": instance_offsets["instances"][0]["offset"][0],
+    "instance_end": instance_offsets["instances"][0]["offset"][0] + instance_offsets["instances"][0]["size"],
+    "instance_header_start": instance_offsets["offset"][0],
+    "instance_header_end": instance_offsets["offset"][1],    
+    "typedef_start": typedef_offset,
+    "typedef_end": typedef_offsets["end"],    
+    "nametable_start": nametable_offset,
+    "nametable_end": nametable_offset+nametable_size
+  }, indent=2))
   
   
 if __name__ == "__main__":

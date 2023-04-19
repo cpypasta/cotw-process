@@ -661,18 +661,10 @@ def read_instance(
                 v = [None] * length
                 for i in range(length):
                     p0 = buffer_pos
-                    if align is not None:
-                        nudge = (align - p0 % align) % align
-                        buffer_pos = p0 + nudge  # v0[0] offset ele 0, v0[1] stride?
-
                     v[i], buffer_pos = read_instance(
                         buffer, n_buffer, buffer_pos,
                         type_def.element_type_hash, map_typedef, map_string_hash, abs_offset,
                         found_strings=found_strings)
-
-                    p1 = buffer_pos
-                    # print(p0, p1, p1-p0)
-
             if opos is not None:
                 buffer_pos = opos
             

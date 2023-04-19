@@ -70,6 +70,20 @@ def _column_format(n: int) -> str:
     name = chr(r + ord('A')) + name
   return name
 
+class CellReference:
+  def __init__(self, data_offset: int, data_hex_offset: str, cell_index: int, ref: str) -> None:
+     self.data_offset = data_offset
+     self.data_hex_offset = data_hex_offset
+     self.cell_index = cell_index
+     self.refs = [ref]
+     
+  def reference(self, ref: str) -> None:
+    self.refs.append(ref)
+  
+  def __repr__(self) -> str:
+     return f"I:{self.cell_index}, D:{self.data_offset},{self.data_hex_offset} ({len(self.refs)})"
+
+
 def parse_adf(filename: Path, suffix: str = None, verbose = False) -> Adf:
     if verbose:
         print(f"Parsing {filename}")
@@ -100,21 +114,26 @@ def load_adf_xls(filename: Path) -> None:
     number_data = src["ValueData"]
     
   sheets = {}
+  numbers = {}
   
-  for sheet in src["Sheet"]:
-    col_cnt = sheet["Cols"]
-    row_cnt = sheet["Rows"]
+  for i, sheet in enumerate(src["Sheet"]):
+    col_cnt = sheet["Cols"].item()
+    row_cnt = sheet["Rows"].item()
     name = sheet["Name"].decode("utf-8")
     cell_indices = sheet["CellIndex"]  
+    cell_index_full = src_full.value["Sheet"].value[i].value["CellIndex"]
+    cell_index_base_offset = cell_index_full.data_offset.item()
     sheets[name] = []
     print(name)
     for row in range(row_cnt):
       for col in range(col_cnt):
-        cell_index = cell_indices[col + col_cnt * row]
+        cell_index = cell_indices[col + col_cnt * row].item()
         cell_info = cell_data_indices[cell_index]
         cell_type = cell_info["Type"]
         cell_format = _cell_format(cell_type)
         cell_data_index = cell_info["DataIndex"].item()
+        cell_lookup = f"{_column_format(col+1)}{row+1}"
+        cell_index_offset = cell_index_base_offset + (4 * (col + col_cnt * row))
         
         if cell_format == "bool":
           cell_data = bool_data[cell_data_index]
@@ -125,20 +144,38 @@ def load_adf_xls(filename: Path) -> None:
         elif cell_format == "number":
           cell_data = number_data[cell_data_index].item()
           cell_data_offset = src_full.value["ValueData"].data_offset.item() + 4 * cell_data_index
+          
+          # ref = f"{i}_{cell_lookup}"
+          # if str(cell_data) not in numbers:
+          #   numbers[str(cell_data)] = CellReference(cell_data_offset, hex(cell_data_offset), cell_index, ref)
+          # else:
+          #   numbers[str(cell_data)].reference(ref)          
+          if str(cell_data) not in numbers:
+            numbers[str(cell_data)] = int(cell_index)
         else:
           cell_data = None
         
         if cell_data:
           sheets[name].append({ 
+            "sheet": name,
             "value": cell_data, 
             "format": cell_format, 
-            "cell": f"{_column_format(col+1)}{row+1}", 
-            "value_index": cell_data_index,
+            "cell": cell_lookup, 
+            "cell_index": cell_index,
+            "cell_index_offset": cell_index_offset,
+            "cell_index_hex_offset": hex(cell_index_offset),
             "data_offset": cell_data_offset,
             "data_hex_offset": hex(cell_data_offset)
           })
   
-  return sheets
+  number_keys = list(numbers.items())
+  number_keys = sorted(number_keys, key=lambda x: float(x[0]))
+  numbers = {key[0]: str(key[1]) for key in number_keys}
+  
+  return {
+    "sheets": sheets,
+    "numbers": numbers
+  }
   
 def load_global_gdcc(filename: Path) -> None:
   adf = parse_adf(filename)

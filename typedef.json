@@ -1,0 +1,545 @@
+{
+  "start": 282760,
+  "end": 284144,
+  "offsets": [
+    {
+      "name": "AnimalPopulationReserveData_3",
+      "metatype": 1,
+      "type_hash": 1996461076,
+      "start": 282760,
+      "end": 282928,
+      "size": 48,
+      "members": [
+        {
+          "name": "AlreadyConverted",
+          "type_hash": 211976733,
+          "size": 1,
+          "offset": 0
+        },
+        {
+          "name": "Populations",
+          "type_hash": 2313640089,
+          "size": 8,
+          "offset": 8
+        },
+        {
+          "name": "HuntingPressureMap",
+          "type_hash": 1872112176,
+          "size": 8,
+          "offset": 24
+        },
+        {
+          "name": "ReserveSeed",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "name": "A[AnimalPopulationData_3]",
+      "metatype": 3,
+      "type_hash": 2313640089,
+      "element_type_hash": 2508839628,
+      "start": 282928,
+      "end": 282968
+    },
+    {
+      "name": "AnimalPopulationData_3",
+      "metatype": 1,
+      "type_hash": 2508839628,
+      "start": 282968,
+      "end": 283232,
+      "size": 72,
+      "members": [
+        {
+          "name": "NameHashId",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 0
+        },
+        {
+          "name": "Groups",
+          "type_hash": 798356966,
+          "size": 8,
+          "offset": 8
+        },
+        {
+          "name": "RepopulateData",
+          "type_hash": 1456247896,
+          "size": 8,
+          "offset": 24
+        },
+        {
+          "name": "InitialTotalScore",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 40
+        },
+        {
+          "name": "InitialNumAnimals",
+          "type_hash": 422569523,
+          "size": 4,
+          "offset": 44
+        },
+        {
+          "name": "Revision",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 48
+        },
+        {
+          "name": "GroupToWarrenId",
+          "type_hash": 1104569251,
+          "size": 8,
+          "offset": 56
+        }
+      ]
+    },
+    {
+      "name": "A[AnimalGroupData_2]",
+      "metatype": 3,
+      "type_hash": 798356966,
+      "element_type_hash": 2266004687,
+      "start": 283232,
+      "end": 283272
+    },
+    {
+      "name": "AnimalGroupData_2",
+      "metatype": 1,
+      "type_hash": 2266004687,
+      "start": 283272,
+      "end": 283440,
+      "size": 48,
+      "members": [
+        {
+          "name": "SpawnAreadId",
+          "type_hash": 422569523,
+          "size": 4,
+          "offset": 0
+        },
+        {
+          "name": "NeedZonePathGuids",
+          "type_hash": 3903585851,
+          "size": 8,
+          "offset": 8
+        },
+        {
+          "name": "Animals",
+          "type_hash": 2491457784,
+          "size": 8,
+          "offset": 24
+        },
+        {
+          "name": "Id",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 40
+        }
+      ]
+    },
+    {
+      "name": "A[uint32]",
+      "metatype": 3,
+      "type_hash": 3903585851,
+      "element_type_hash": 123620943,
+      "start": 283440,
+      "end": 283480
+    },
+    {
+      "name": "A[AnimalData_2]",
+      "metatype": 3,
+      "type_hash": 2491457784,
+      "element_type_hash": 1652156484,
+      "start": 283480,
+      "end": 283520
+    },
+    {
+      "name": "AnimalData_2",
+      "metatype": 1,
+      "type_hash": 1652156484,
+      "start": 283520,
+      "end": 283784,
+      "size": 32,
+      "members": [
+        {
+          "name": "Gender",
+          "type_hash": 211976733,
+          "size": 1,
+          "offset": 0
+        },
+        {
+          "name": "Weight",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 4
+        },
+        {
+          "name": "Score",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 8
+        },
+        {
+          "name": "IsGreatOne",
+          "type_hash": 211976733,
+          "size": 1,
+          "offset": 12
+        },
+        {
+          "name": "VisualVariationSeed",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 16
+        },
+        {
+          "name": "Id",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 20
+        },
+        {
+          "name": "MapPosition",
+          "type_hash": 3207077752,
+          "size": 4,
+          "offset": 24
+        }
+      ]
+    },
+    {
+      "name": "Vector2_1",
+      "metatype": 1,
+      "type_hash": 3207077752,
+      "start": 283784,
+      "end": 283888,
+      "size": 8,
+      "members": [
+        {
+          "name": "X",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 0
+        },
+        {
+          "name": "Y",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 4
+        }
+      ]
+    },
+    {
+      "name": "A[AnimalRepopulateData_1]",
+      "metatype": 3,
+      "type_hash": 1456247896,
+      "element_type_hash": 721841026,
+      "start": 283888,
+      "end": 283928
+    },
+    {
+      "name": "AnimalRepopulateData_1",
+      "metatype": 1,
+      "type_hash": 721841026,
+      "start": 283928,
+      "end": 284064,
+      "size": 12,
+      "members": [
+        {
+          "name": "Gender",
+          "type_hash": 211976733,
+          "size": 1,
+          "offset": 0
+        },
+        {
+          "name": "Weight",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 4
+        },
+        {
+          "name": "Score",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 8
+        }
+      ]
+    },
+    {
+      "name": "A[uint64]",
+      "metatype": 3,
+      "type_hash": 1104569251,
+      "element_type_hash": 2704924703,
+      "start": 284064,
+      "end": 284104
+    },
+    {
+      "name": "A[uint8]",
+      "metatype": 3,
+      "type_hash": 1872112176,
+      "element_type_hash": 211976733,
+      "start": 284104,
+      "end": 284144
+    }
+  ],
+  "type_map": {
+    "1996461076": {
+      "name": "AnimalPopulationReserveData_3",
+      "metatype": 1,
+      "size": 48,
+      "element_type_hash": null,
+      "members": [
+        {
+          "name": "AlreadyConverted",
+          "type_hash": 211976733,
+          "size": 1,
+          "offset": 0
+        },
+        {
+          "name": "Populations",
+          "type_hash": 2313640089,
+          "size": 8,
+          "offset": 8
+        },
+        {
+          "name": "HuntingPressureMap",
+          "type_hash": 1872112176,
+          "size": 8,
+          "offset": 24
+        },
+        {
+          "name": "ReserveSeed",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 40
+        }
+      ]
+    },
+    "2313640089": {
+      "name": "A[AnimalPopulationData_3]",
+      "metatype": 3,
+      "size": null,
+      "element_type_hash": 2508839628,
+      "members": []
+    },
+    "2508839628": {
+      "name": "AnimalPopulationData_3",
+      "metatype": 1,
+      "size": 72,
+      "element_type_hash": null,
+      "members": [
+        {
+          "name": "NameHashId",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 0
+        },
+        {
+          "name": "Groups",
+          "type_hash": 798356966,
+          "size": 8,
+          "offset": 8
+        },
+        {
+          "name": "RepopulateData",
+          "type_hash": 1456247896,
+          "size": 8,
+          "offset": 24
+        },
+        {
+          "name": "InitialTotalScore",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 40
+        },
+        {
+          "name": "InitialNumAnimals",
+          "type_hash": 422569523,
+          "size": 4,
+          "offset": 44
+        },
+        {
+          "name": "Revision",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 48
+        },
+        {
+          "name": "GroupToWarrenId",
+          "type_hash": 1104569251,
+          "size": 8,
+          "offset": 56
+        }
+      ]
+    },
+    "798356966": {
+      "name": "A[AnimalGroupData_2]",
+      "metatype": 3,
+      "size": null,
+      "element_type_hash": 2266004687,
+      "members": []
+    },
+    "2266004687": {
+      "name": "AnimalGroupData_2",
+      "metatype": 1,
+      "size": 48,
+      "element_type_hash": null,
+      "members": [
+        {
+          "name": "SpawnAreadId",
+          "type_hash": 422569523,
+          "size": 4,
+          "offset": 0
+        },
+        {
+          "name": "NeedZonePathGuids",
+          "type_hash": 3903585851,
+          "size": 8,
+          "offset": 8
+        },
+        {
+          "name": "Animals",
+          "type_hash": 2491457784,
+          "size": 8,
+          "offset": 24
+        },
+        {
+          "name": "Id",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 40
+        }
+      ]
+    },
+    "3903585851": {
+      "name": "A[uint32]",
+      "metatype": 3,
+      "size": null,
+      "element_type_hash": 123620943,
+      "members": []
+    },
+    "2491457784": {
+      "name": "A[AnimalData_2]",
+      "metatype": 3,
+      "size": null,
+      "element_type_hash": 1652156484,
+      "members": []
+    },
+    "1652156484": {
+      "name": "AnimalData_2",
+      "metatype": 1,
+      "size": 32,
+      "element_type_hash": null,
+      "members": [
+        {
+          "name": "Gender",
+          "type_hash": 211976733,
+          "size": 1,
+          "offset": 0
+        },
+        {
+          "name": "Weight",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 4
+        },
+        {
+          "name": "Score",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 8
+        },
+        {
+          "name": "IsGreatOne",
+          "type_hash": 211976733,
+          "size": 1,
+          "offset": 12
+        },
+        {
+          "name": "VisualVariationSeed",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 16
+        },
+        {
+          "name": "Id",
+          "type_hash": 123620943,
+          "size": 4,
+          "offset": 20
+        },
+        {
+          "name": "MapPosition",
+          "type_hash": 3207077752,
+          "size": 4,
+          "offset": 24
+        }
+      ]
+    },
+    "3207077752": {
+      "name": "Vector2_1",
+      "metatype": 1,
+      "size": 8,
+      "element_type_hash": null,
+      "members": [
+        {
+          "name": "X",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 0
+        },
+        {
+          "name": "Y",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 4
+        }
+      ]
+    },
+    "1456247896": {
+      "name": "A[AnimalRepopulateData_1]",
+      "metatype": 3,
+      "size": null,
+      "element_type_hash": 721841026,
+      "members": []
+    },
+    "721841026": {
+      "name": "AnimalRepopulateData_1",
+      "metatype": 1,
+      "size": 12,
+      "element_type_hash": null,
+      "members": [
+        {
+          "name": "Gender",
+          "type_hash": 211976733,
+          "size": 1,
+          "offset": 0
+        },
+        {
+          "name": "Weight",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 4
+        },
+        {
+          "name": "Score",
+          "type_hash": 1964352007,
+          "size": 4,
+          "offset": 8
+        }
+      ]
+    },
+    "1104569251": {
+      "name": "A[uint64]",
+      "metatype": 3,
+      "size": null,
+      "element_type_hash": 2704924703,
+      "members": []
+    },
+    "1872112176": {
+      "name": "A[uint8]",
+      "metatype": 3,
+      "size": null,
+      "element_type_hash": 211976733,
+      "members": []
+    }
+  }
+}
