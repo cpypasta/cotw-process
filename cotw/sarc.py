@@ -14,7 +14,7 @@ def extract_file(sarc: FileSarc, src_filename: Path, filename: str) -> None:
       fp.seek(byte_start)
       data = fp.read(byte_size)
       (Path().cwd() / dest_filename).write_bytes(data)
-      print("Extractd: ", dest_filename)
+      print("Extracted: ", dest_filename)
 
 def load_sarc(filename: Path, debug=True) -> FileSarc:
   sarc = FileSarc()

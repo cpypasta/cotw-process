@@ -129,33 +129,29 @@ def load_adf_xls(filename: Path) -> None:
       for col in range(col_cnt):
         cell_index = cell_indices[col + col_cnt * row].item()
         cell_info = cell_data_indices[cell_index]
+        print(type(cell_index_full.value[col + col_cnt * row]))
         cell_type = cell_info["Type"]
         cell_format = _cell_format(cell_type)
         cell_data_index = cell_info["DataIndex"].item()
         cell_lookup = f"{_column_format(col+1)}{row+1}"
         cell_index_offset = cell_index_base_offset + (4 * (col + col_cnt * row))
         
-        if cell_format == "bool":
+        if cell_format == "boolean":
           cell_data = bool_data[cell_data_index]
-          cell_data_offset = src_full.value["BoolData"].value[cell_data_index].data_offset.item()
+          cell_data_offset = src_full.value["BoolData"].data_offset.item()
         elif cell_format == "string":
           cell_data = string_data[cell_data_index].decode("utf-8")
           cell_data_offset = src_full.value["StringData"].value[cell_data_index].data_offset.item()
         elif cell_format == "number":
           cell_data = number_data[cell_data_index].item()
-          cell_data_offset = src_full.value["ValueData"].data_offset.item() + 4 * cell_data_index
-          
-          # ref = f"{i}_{cell_lookup}"
-          # if str(cell_data) not in numbers:
-          #   numbers[str(cell_data)] = CellReference(cell_data_offset, hex(cell_data_offset), cell_index, ref)
-          # else:
-          #   numbers[str(cell_data)].reference(ref)          
+          cell_data_offset = src_full.value["ValueData"].data_offset.item() + 4 * cell_data_index         
           if str(cell_data) not in numbers:
             numbers[str(cell_data)] = int(cell_index)
         else:
+          print("Unknown format:", cell_format)
           cell_data = None
         
-        if cell_data:
+        if cell_data != None:
           sheets[name].append({ 
             "sheet": name,
             "value": cell_data, 
@@ -176,11 +172,27 @@ def load_adf_xls(filename: Path) -> None:
     "sheets": sheets,
     "numbers": numbers
   }
-  
+
+def extract_global_file(global_filename: Path, filename: str) -> None:
+  adf = parse_adf(global_filename)
+  for i, instance in enumerate(adf.table_instance_values):
+    for item in instance:
+      full = adf.table_instance[i]
+      if item.v_path.decode("Utf-8") == filename:
+        with global_filename.open("rb") as fp:
+          fp.seek(item.offset + full.offset)
+          data = fp.read(full.size)
+          write_path = Path.cwd() / Path(filename).parent
+          write_path.mkdir(parents=True, exist_ok=True)
+          (Path.cwd() / filename).write_bytes(data)
+          print("Extracted: ", filename)
+        break
+
 def load_global_gdcc(filename: Path) -> None:
   adf = parse_adf(filename)
   for i, instance in enumerate(adf.table_instance_values):
     for item in instance:
       offset = item.offset + adf.table_instance[i].offset
+      adf.table_instance[i].size
       print(item.v_path, offset, hex(offset))
   None

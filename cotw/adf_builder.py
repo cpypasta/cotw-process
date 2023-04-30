@@ -18,6 +18,7 @@ PRIMITIVE_2 = [typedef_s16, typedef_u16]
 PRIMITIVE_8 = [typedef_s64, typedef_u64, typedef_f64]
 STRUCTURE = 1
 ARRAY = 3
+STRINGHASH = 9
 
 def read_u32(data: bytearray) -> int:
   return struct.unpack("I", data)[0]
@@ -216,6 +217,11 @@ def read_instance(data: bytearray, offset: int, pointer: int, type_id: int, type
         value["Array"]["values"] = values
       
       pointer = org_pointer
+    elif type_def["metatype"] == STRINGHASH:
+      print(type_def["name"], type_def["size"])
+      if type_def["size"] == 4:
+        value = f"String Hash (4, {pos})"
+        pointer += 4      
     else:
       print(f"Unknown metatype: {type_def['metatype']}")
   
@@ -342,6 +348,8 @@ def profile_header(data: bytearray) -> dict:
   instance_offset = read_u32(header[12:16])
   typedef_count = read_u32(header[16:20])
   typedef_offset = read_u32(header[20:24])
+  stringhash_count = read_u32(header[24:28])
+  stringhash_offset = read_u32(header[28:32])
   nametable_count = read_u32(header[32:36])
   nametable_offset = read_u32(header[36:40])
   total_size = read_u32(header[40:44])  
@@ -354,13 +362,16 @@ def profile_header(data: bytearray) -> dict:
     "nametable_offset": nametable_offset,
     "instance_count": instance_count,
     "instance_offset": instance_offset,
+    "stringhash_count": stringhash_count,
+    "stringhash_offset": stringhash_offset,
     "header_start": 0,
     "header_instance_offset": 12,
     "header_typedef_offset": 20,
+    "header_stringhash_offset": 28,
     "header_nametable_offset": 36,
     "header_total_size_offset": 40,
     "header_end": 64
-  }  
+  } 
 
 def create_profile(filename: Path) -> None:
   data = bytearray(filename.read_bytes())
@@ -369,29 +380,24 @@ def create_profile(filename: Path) -> None:
   instance_offset = header_profile["instance_offset"]
   typedef_count = header_profile["typedef_count"]
   typedef_offset = header_profile["typedef_offset"]
+  stringhash_count = header_profile["stringhash_count"]
+  stringhash_offset = header_profile["stringhash_offset"]  
   nametable_count = header_profile["nametable_count"]
   nametable_offset = header_profile["nametable_offset"]
   total_size = header_profile["total_size"]
-  
   comment_size = find_length_of_string(data[64:])
-  
   nametable_size = find_nametable_size(data[nametable_offset:], nametable_count)
   nametables = read_nametables(data[nametable_offset:], nametable_count)
-  
   typedef_offsets = find_typedef_offset(data, typedef_offset, typedef_count, nametables)
   type_map = typedef_offsets["type_map"]
-  
-  # (Path.cwd() / "typedef.json").write_text(json.dumps(typedef_offsets, indent=2))
-  
   instance_offsets = find_instance_offset(data, instance_offset, instance_count, nametables, type_map)
-  
-  # (Path.cwd() / "inst.json").write_text(json.dumps(instance_offsets, indent=2))
   
   return {
     "total_size": total_size,
     "header_start": 0,
     "header_instance_offset": 12,
     "header_typedef_offset": 20,
+    "header_stringhash_offset": 28,
     "header_nametable_offset": 36,
     "header_total_size_offset": 40,
     "header_end": 64,
@@ -403,6 +409,8 @@ def create_profile(filename: Path) -> None:
     "instance_header_end": instance_offsets["offset"][1],    
     "typedef_start": typedef_offset,
     "typedef_end": typedef_offsets["end"],    
+    "stringhash_start": stringhash_offset,
+    "stringhash_end": nametable_offset,
     "nametable_start": nametable_offset,
     "nametable_end": nametable_offset+nametable_size,
     "details": {

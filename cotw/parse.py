@@ -1,6 +1,6 @@
 import sys, json
 from pathlib import Path
-from cotw import adf, sarc, rtpc
+from cotw import adf, sarc, rtpc, adf_builder
 
 def main():  
   type = sys.argv[1]
@@ -10,7 +10,12 @@ def main():
   elif type == "adfc":
     adf.load_adfc(Path.cwd() / filename)
   elif type == "gdcc":
-    adf.load_global_gdcc(Path.cwd() / filename)
+    global_filename = Path().cwd() / filename
+    do_extract = len(sys.argv) == 4
+    if do_extract:
+      adf.extract_global_file(global_filename, sys.argv[3])
+    else:
+      adf.load_global_gdcc(global_filename)
   elif type == "sarc":
     src_filename = Path().cwd() / filename
     do_extract = len(sys.argv) == 4
@@ -25,5 +30,12 @@ def main():
     print(output)
   elif type == "rtpc":
     rtpc.load_rtpc(Path().cwd() / filename)
+  elif type == "profile":
+    profile = adf_builder.create_profile(Path().cwd() / filename)
+    (Path().cwd() / f"{Path(filename).name}_profile.json").write_text(json.dumps(profile, indent=2))
+  elif type == "profile_header":
+    data = bytearray((Path().cwd() / filename).read_bytes())
+    profile = adf_builder.profile_header(data)
+    (Path().cwd() / f"{Path(filename).name}_header_profile.json").write_text(json.dumps(profile, indent=2))    
   else:
     print("unknown type", type)
