@@ -14,6 +14,12 @@ def _decompress_bytes(data_bytes: bytearray) -> bytearray:
     decompressed = decompressed + decompress.flush()
     return decompressed
 
+def _compress_bytes(data_bytes: bytearray) -> bytearray:
+    compress = zlib.compressobj()
+    compressed = compress.compress(data_bytes)
+    compressed = compressed + compress.flush()
+    return compressed
+
 def _save_file(filename: Path, data_bytes: bytearray, verbose = False):
     Path(filename.parent).mkdir(exist_ok=True)
     filename.write_bytes(data_bytes)
@@ -48,10 +54,34 @@ def _decompress_adf_file(filename: Path, verbose = False) -> Path:
 
     # save uncompressed adf data to file
     parsed_basename = filename.name
-    adf_file = Path.cwd() / f".working/{parsed_basename}_sliced"
+    adf_file = Path.cwd() / f"{parsed_basename}_sliced"
     _save_file(adf_file, decompressed_data_bytes, verbose) 
 
     return adf_file 
+
+def _decompress_adf_headers(filename: Path, verbose = False):
+    # read entire adf file
+    data_bytes = _read_file(filename, verbose)
+    data_bytes = bytearray(data_bytes)
+
+    # split out header
+    header = data_bytes[0:32]
+    data_bytes = data_bytes[32:]
+
+    # decompress data
+    decompressed_data_bytes = _decompress_bytes(data_bytes)
+    decompressed_data_bytes = bytearray(decompressed_data_bytes)
+
+    # split out compression header
+    decompressed_header = decompressed_data_bytes[0:5]
+    decompressed_data_bytes = decompressed_data_bytes[5:]
+
+    # save uncompressed adf data to file
+    parsed_basename = filename.name
+    adf_file = Path.cwd() / f"{parsed_basename}_sliced"
+    _save_file(adf_file, decompressed_data_bytes, verbose) 
+
+    return (bytearray(header), bytearray(decompressed_header)) 
 
 def _cell_format(type: int) -> str:
   if type == 0:
@@ -129,7 +159,6 @@ def load_adf_xls(filename: Path) -> None:
       for col in range(col_cnt):
         cell_index = cell_indices[col + col_cnt * row].item()
         cell_info = cell_data_indices[cell_index]
-        print(type(cell_index_full.value[col + col_cnt * row]))
         cell_type = cell_info["Type"]
         cell_format = _cell_format(cell_type)
         cell_data_index = cell_info["DataIndex"].item()
@@ -163,7 +192,9 @@ def load_adf_xls(filename: Path) -> None:
             "data_offset": cell_data_offset,
             "data_hex_offset": hex(cell_data_offset)
           })
-  
+
+    sheets[name] = sorted(sheets[name], key=lambda x: x["cell"])
+    
   number_keys = list(numbers.items())
   number_keys = sorted(number_keys, key=lambda x: float(x[0]))
   numbers = {key[0]: str(key[1]) for key in number_keys}

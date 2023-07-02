@@ -18,9 +18,12 @@ def extract_file(sarc: FileSarc, src_filename: Path, filename: str) -> None:
 
 def load_sarc(filename: Path, debug=True) -> FileSarc:
   sarc = FileSarc()
+  entries = []
   with filename.open('rb') as fp:
     sarc.header_deserialize(fp)
-    if debug:
-      for sarc_file in sarc.entries:
-        print(sarc_file.v_path, f"[{sarc_file.offset} - {sarc_file.offset + sarc_file.length}]", f", Offset: {sarc_file.offset}, {hex(sarc_file.offset)}")
+    for sarc_file in sarc.entries:
+      entries.append((sarc_file.META_entry_ptr, sarc_file.offset, sarc_file.length, sarc_file.v_path))
+  if debug:
+    for e in sorted(entries, key=lambda x: x[0]):
+      print(e)
   return sarc  

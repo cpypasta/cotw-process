@@ -181,26 +181,31 @@ def read_instance(data: bytearray, offset: int, pointer: int, type_id: int, type
     if type_def["metatype"] == STRUCTURE:
       value = {}
       value["structure_offset"] = (pos, pos+type_def["size"])
+      value["size"] = type_def["size"]   
       org_pointer = pointer
       for m in type_def["members"]:
         m_offset = m["offset"]
         pointer = org_pointer + m_offset
         v = read_instance(data, offset, pointer, int(m["type_hash"]), type_map)
         value[m["name"]] = { 
+          "member_rel_offset": m_offset,
+          "member_offset": pointer+offset,
           "value": v[0]
         }
       pointer = org_pointer + type_def["size"] # TODO: READ
     elif type_def["metatype"] == ARRAY:
       array_offset = read_u32(data[pos:pos+4])
+      flags = read_u32(data[pos+4:pos+8])
       length = read_u32(data[pos+8:pos+12]) 
       array_header_size = 12
       org_pos = pos
-      pointer += array_header_size # TODO: READ
+      pointer += array_header_size
       org_pointer = pointer
       pos = offset+pointer
       value = { "Array": { 
         "name": type_def["name"], 
         "header_offset": (org_pos, org_pos+array_header_size),
+        "flags": flags,
         "length": length
       }}
       pointer = array_offset
@@ -371,7 +376,7 @@ def profile_header(data: bytearray) -> dict:
     "header_nametable_offset": 36,
     "header_total_size_offset": 40,
     "header_end": 64
-  } 
+  }  
 
 def create_profile(filename: Path) -> None:
   data = bytearray(filename.read_bytes())
@@ -418,23 +423,13 @@ def create_profile(filename: Path) -> None:
     }
   }
   
-def find_arrays(instance_offsets: dict) -> Tuple[List[AdfArray], List[AdfArray]]:
+def find_arrays(profile: dict) -> Tuple[List[AdfArray], List[AdfArray]]:
+  instance_offsets = profile["details"]["instance_offsets"]
   instance_offset = instance_offsets["instances"][0]["offset"][0]
   array_offsets = find_population_array_offsets(instance_offsets["instances"][0]["0"])
   animal_arrays = [create_animal_array(x, instance_offset) for x in array_offsets if x["key"] == 'Animals']
   other_arrays = [create_array(x, instance_offset) for x in array_offsets if x["key"] != 'Animals']
   return (animal_arrays, other_arrays)
-
-def update_non_instance_offsets(data: bytearray, profile: dict, added_size: int) -> None:
-  offsets_to_update = [
-    (profile["header_instance_offset"], profile["instance_header_start"]),
-    (profile["header_typedef_offset"], profile["typedef_start"]),
-    (profile["header_nametable_offset"], profile["nametable_start"]),
-    (profile["header_total_size_offset"], profile["total_size"]),
-    (profile["instance_header_start"]+12, profile["details"]["instance_offsets"]["instances"][0]["size"])
-  ]
-  for offset in offsets_to_update:
-    write_value(data, create_u32(offset[1] + added_size), offset[0])
 
 def insert_animal(data:bytearray, animal: Animal, array: AdfArray) -> None:
   write_value(data, create_u32(array.length+1), array.header_length_offset) 
@@ -446,6 +441,51 @@ def update_instance_arrays(data: bytearray, animal_arrays: List[AdfArray], targe
     if animal_array.array_start_offset >= target_array.array_end_offset and animal_array.array_start_offset != 0:
       print(animal_array)
       write_value(data, create_u32(animal_array.rel_array_start_offset + size), animal_array.header_array_offset)
+
+def update_non_instance_offsets(data: bytearray, profile: dict, added_size: int) -> None:
+  offsets_to_update = [
+    (profile["header_instance_offset"], profile["instance_header_start"]),
+    (profile["header_typedef_offset"], profile["typedef_start"]),
+    (profile["header_nametable_offset"], profile["nametable_start"]),
+    (profile["header_total_size_offset"], profile["total_size"]),
+    (profile["instance_header_start"]+12, profile["details"]["instance_offsets"]["instances"][0]["size"])
+  ]
+  for offset in offsets_to_update:
+    new_value = offset[1] + added_size
+    if (new_value < 0):
+      new_value = 0
+    write_value(data, create_u32(new_value), offset[0])
+
+def _update_instance_arrays(data: bytearray, other_arrays: List[AdfArray], target_array: AdfArray, size: int):
+  for array in other_arrays: # find all arrays after me and update
+    if array.array_start_offset >= target_array.array_end_offset and array.array_start_offset != 0:
+      print("Other", array)
+      array.array_start_offset = array.array_start_offset + size
+      array.array_end_offset = array.array_end_offset + size
+      array.rel_array_start_offset = array.rel_array_start_offset + size
+      write_value(data, create_u32(array.rel_array_start_offset), array.header_array_offset)
+
+def insert_array_data(file: Path, new_data: bytearray, header_offset: int, data_offset: int, array_length: int, old_array_length: int = None) -> None:
+  profile = create_profile(file)
+  _, other_arrays = find_arrays(profile)
+  print("Size of other arrays", len(other_arrays))
+  target_array = None
+  for a in other_arrays:
+    if a.header_array_offset == header_offset:
+      target_array = a
+      break
+    
+  data = bytearray(file.read_bytes())
+  if target_array:
+    print("Target", target_array)
+    _update_instance_arrays(data, other_arrays, target_array, len(new_data))
+    
+  update_non_instance_offsets(data, profile, len(new_data))
+  print(read_u32(data[header_offset+8:header_offset+12]), array_length)
+  print("Length", len(new_data))
+  write_value(data, create_u32(array_length), header_offset+8)
+  data[data_offset:data_offset] = new_data
+  (file.parent / f"{file.name}_u" ).write_bytes(data)
 
 def compare_headers() -> None:
   org_filename = Path().cwd() / "animal_population_0_sliced"
