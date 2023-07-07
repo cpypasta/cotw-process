@@ -1,0 +1,44 @@
+  "red_deer": {
+    "male": {
+      "low_weight": 241.0,
+      "high_weight": 260.0,
+      "weight_range": 19.0,
+      "score_weight_bias": 10.5
+    }
+  },
+  10.5 = 260 * x
+  "whitetail_deer": {
+    "male": {
+      "low_weight": 59.0,
+      "high_weight": 100.0,
+      "weight_range": 41.0,
+      "score_weight_bias": 7.0
+    }
+  },  
+
+  "black_bear": {
+    "male": {
+      "low_weight": 57.0,
+      "high_weight": 290.0,
+      "weight_range": 233.0,
+      "score_weight_bias": 65.0
+    }
+  },  
+
+  "eu_bison": {
+    "male": {
+      "low_weight": 400.0,
+      "high_weight": 920.0,
+      "weight_range": 520.0,
+      "score_weight_bias": 70.0
+    }
+  },  
+
+  "fallow_deer": {
+    "male": {
+      "low_weight": 101.0,
+      "high_weight": 140.0,
+      "weight_range": 39.0,
+      "score_weight_bias": 8.0
+    }
+  },  

@@ -45,7 +45,10 @@ def parse_animal_types() -> None:
         continue
       
       gender = fur.prop_table[3].data
-      if type(gender) == int:
+      if type(gender) != int:
+        gender = fur.prop_table[4].data
+      
+      if gender in (1, 2):
         gender = "male" if gender == 1 else "female"
         if gender == "male":
           male_furs.append(fur_name)
@@ -60,7 +63,57 @@ def parse_animal_types() -> None:
     
   Path("global_furs.json").write_text(json.dumps(global_furs, indent=2))
   
+def parse_animal_weight_bias() -> None:
+  animals = open_rtpc(Path("global_animal_types.blo"))
+  global_scores = {}
+  for animal in animals:
+    name = animal.prop_table[-11].data
+    if type(name) == bytes:
+      name = name.decode("utf-8")
+    else:
+      name = (animal.prop_table[-12].data).decode("utf-8")   
+    
+    i = 0
+    table_index = None
+    max_i = len(animal.child_table)
+    while not table_index and i < max_i:
+      table_type = animal.child_table[i].prop_table[0].data
+      if type(table_type) == bytes and table_type.decode("utf-8") == 'CAnimalTypeScoringSettings':
+        table_index = i
+        break
+      else:
+        i = i + 1        
+    
+    if table_index == None:
+      continue        
+    
+    score_details = animal.child_table[table_index].child_table
+    for score_node in score_details:
+      score_type = score_node.prop_table[1].data    
+      if type(score_type) == bytes and score_type.decode("utf-8") == "SAnimalTypeScoringDistributionSettings":
+        print(name)        
+        score_high = score_node.prop_table[-3].data
+        if score_high > 0:
+          score_gender = "female" if "Female" in score_node.prop_table[-5].data.decode("utf-8") else "male"
+          score_weight_bias = score_node.prop_table[-2].data
+          score_max_weight = score_node.prop_table[2].data
+          score_low_weight = score_node.prop_table[5].data
+          score_details = {
+              "low_weight": score_low_weight,
+              "high_weight": score_max_weight,
+              "weight_range": score_max_weight - score_low_weight,
+              "score_weight_bias": round(score_max_weight * 0.05, 2)
+            }
+          if name not in global_scores:
+            global_scores[name] = {}
+          global_scores[name][score_gender] = score_details
+          
+           
+          
+    # global_scores[name] = { "male_cnt": len(male_furs), "female_cnt": len(female_furs)}
+    
+  Path("global_scores.json").write_text(json.dumps(global_scores, indent=2))
     
 
 if __name__ == "__main__":
-  parse_animal_types()
+  parse_animal_weight_bias()

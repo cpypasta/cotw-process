@@ -1,0 +1,1154 @@
+{
+  "raccoon_dog": {
+    "male": {
+      "low_weight": 3.0,
+      "high_weight": 10.0,
+      "weight_range": 7.0,
+      "score_weight_bias": 0.5
+    },
+    "female": {
+      "low_weight": 3.0,
+      "high_weight": 6.5,
+      "weight_range": 3.5,
+      "score_weight_bias": 0.33
+    }
+  },
+  "feral_goat": {
+    "female": {
+      "low_weight": 25.0,
+      "high_weight": 35.0,
+      "weight_range": 10.0,
+      "score_weight_bias": 1.75
+    },
+    "male": {
+      "low_weight": 44.0,
+      "high_weight": 50.0,
+      "weight_range": 6.0,
+      "score_weight_bias": 2.5
+    }
+  },
+  "beceite_ibex": {
+    "male": {
+      "low_weight": 75.0,
+      "high_weight": 110.0,
+      "weight_range": 35.0,
+      "score_weight_bias": 5.5
+    },
+    "female": {
+      "low_weight": 35.0,
+      "high_weight": 70.0,
+      "weight_range": 35.0,
+      "score_weight_bias": 3.5
+    }
+  },
+  "raccoon": {
+    "female": {
+      "low_weight": 3.0,
+      "high_weight": 6.0,
+      "weight_range": 3.0,
+      "score_weight_bias": 0.3
+    },
+    "male": {
+      "low_weight": 4.0,
+      "high_weight": 13.0,
+      "weight_range": 9.0,
+      "score_weight_bias": 0.65
+    }
+  },
+  "ronda_ibex": {
+    "female": {
+      "low_weight": 35.0,
+      "high_weight": 70.0,
+      "weight_range": 35.0,
+      "score_weight_bias": 3.5
+    },
+    "male": {
+      "low_weight": 45.0,
+      "high_weight": 70.0,
+      "weight_range": 25.0,
+      "score_weight_bias": 3.5
+    }
+  },
+  "bighorn_sheep": {
+    "male": {
+      "low_weight": 70.0,
+      "high_weight": 160.0,
+      "weight_range": 90.0,
+      "score_weight_bias": 8.0
+    },
+    "female": {
+      "low_weight": 50.0,
+      "high_weight": 100.0,
+      "weight_range": 50.0,
+      "score_weight_bias": 5.0
+    }
+  },
+  "coyote": {
+    "female": {
+      "low_weight": 15.0,
+      "high_weight": 20.0,
+      "weight_range": 5.0,
+      "score_weight_bias": 1.0
+    },
+    "male": {
+      "low_weight": 16.0,
+      "high_weight": 27.0,
+      "weight_range": 11.0,
+      "score_weight_bias": 1.35
+    }
+  },
+  "red_deer": {
+    "male": {
+      "low_weight": 241.0,
+      "high_weight": 260.0,
+      "weight_range": 19.0,
+      "score_weight_bias": 13.0
+    }
+  },
+  "springbok": {
+    "female": {
+      "low_weight": 27.0,
+      "high_weight": 37.0,
+      "weight_range": 10.0,
+      "score_weight_bias": 1.85
+    },
+    "male": {
+      "low_weight": 32.0,
+      "high_weight": 42.0,
+      "weight_range": 10.0,
+      "score_weight_bias": 2.1
+    }
+  },
+  "eurasian_lynx": {
+    "male": {
+      "low_weight": 18.0,
+      "high_weight": 45.0,
+      "weight_range": 27.0,
+      "score_weight_bias": 2.25
+    },
+    "female": {
+      "low_weight": 8.0,
+      "high_weight": 21.0,
+      "weight_range": 13.0,
+      "score_weight_bias": 1.05
+    }
+  },
+  "lesser_kudu": {
+    "male": {
+      "low_weight": 60.0,
+      "high_weight": 105.0,
+      "weight_range": 45.0,
+      "score_weight_bias": 5.25
+    }
+  },
+  "jackrabbit": {
+    "male": {
+      "low_weight": 1.899999976158142,
+      "high_weight": 6.829999923706055,
+      "weight_range": 4.929999947547913,
+      "score_weight_bias": 0.34
+    },
+    "female": {
+      "low_weight": 2.0,
+      "high_weight": 4.599999904632568,
+      "weight_range": 2.5999999046325684,
+      "score_weight_bias": 0.23
+    }
+  },
+  "chamois": {
+    "male": {
+      "low_weight": 40.0,
+      "high_weight": 65.0,
+      "weight_range": 25.0,
+      "score_weight_bias": 3.25
+    },
+    "female": {
+      "low_weight": 35.0,
+      "high_weight": 50.0,
+      "weight_range": 15.0,
+      "score_weight_bias": 2.5
+    }
+  },
+  "antelope_jackrabbit": {
+    "male": {
+      "low_weight": 2.700000047683716,
+      "high_weight": 4.699999809265137,
+      "weight_range": 1.999999761581421,
+      "score_weight_bias": 0.23
+    },
+    "female": {
+      "low_weight": 2.200000047683716,
+      "high_weight": 4.099999904632568,
+      "weight_range": 1.8999998569488525,
+      "score_weight_bias": 0.2
+    }
+  },
+  "banteng": {
+    "male": {
+      "low_weight": 600.0,
+      "high_weight": 800.0,
+      "weight_range": 200.0,
+      "score_weight_bias": 40.0
+    },
+    "female": {
+      "low_weight": 590.0,
+      "high_weight": 670.0,
+      "weight_range": 80.0,
+      "score_weight_bias": 33.5
+    }
+  },
+  "feral_pig": {
+    "male": {
+      "low_weight": 45.0,
+      "high_weight": 205.0,
+      "weight_range": 160.0,
+      "score_weight_bias": 10.25
+    },
+    "female": {
+      "low_weight": 32.0,
+      "high_weight": 114.0,
+      "weight_range": 82.0,
+      "score_weight_bias": 5.7
+    }
+  },
+  "sidestriped_jackal": {
+    "female": {
+      "low_weight": 6.0,
+      "high_weight": 10.0,
+      "weight_range": 4.0,
+      "score_weight_bias": 0.5
+    },
+    "male": {
+      "low_weight": 7.0,
+      "high_weight": 14.0,
+      "weight_range": 7.0,
+      "score_weight_bias": 0.7
+    }
+  },
+  "eastern_cottontail_rabbit": {
+    "male": {
+      "low_weight": 0.800000011920929,
+      "high_weight": 1.7999999523162842,
+      "weight_range": 0.9999999403953552,
+      "score_weight_bias": 0.09
+    },
+    "female": {
+      "low_weight": 1.100000023841858,
+      "high_weight": 2.0999999046325684,
+      "weight_range": 0.9999998807907104,
+      "score_weight_bias": 0.1
+    }
+  },
+  "eu_bison": {
+    "female": {
+      "low_weight": 300.0,
+      "high_weight": 540.0,
+      "weight_range": 240.0,
+      "score_weight_bias": 27.0
+    },
+    "male": {
+      "low_weight": 400.0,
+      "high_weight": 920.0,
+      "weight_range": 520.0,
+      "score_weight_bias": 46.0
+    }
+  },
+  "magpie_goose": {
+    "female": {
+      "low_weight": 1.399999976158142,
+      "high_weight": 2.799999952316284,
+      "weight_range": 1.399999976158142,
+      "score_weight_bias": 0.14
+    },
+    "male": {
+      "low_weight": 1.7999999523162842,
+      "high_weight": 3.200000047683716,
+      "weight_range": 1.4000000953674316,
+      "score_weight_bias": 0.16
+    }
+  },
+  "gemsbok": {
+    "male": {
+      "low_weight": 180.0,
+      "high_weight": 240.0,
+      "weight_range": 60.0,
+      "score_weight_bias": 12.0
+    },
+    "female": {
+      "low_weight": 100.0,
+      "high_weight": 210.0,
+      "weight_range": 110.0,
+      "score_weight_bias": 10.5
+    }
+  },
+  "southeastern_ibex": {
+    "female": {
+      "low_weight": 35.0,
+      "high_weight": 70.0,
+      "weight_range": 35.0,
+      "score_weight_bias": 3.5
+    },
+    "male": {
+      "low_weight": 35.0,
+      "high_weight": 87.5,
+      "weight_range": 52.5,
+      "score_weight_bias": 4.38
+    }
+  },
+  "hazel_grouse": {
+    "female": {
+      "low_weight": 0.30000001192092896,
+      "high_weight": 0.4000000059604645,
+      "weight_range": 0.09999999403953552,
+      "score_weight_bias": 0.02
+    },
+    "male": {
+      "low_weight": 0.30000001192092896,
+      "high_weight": 0.44999998807907104,
+      "weight_range": 0.1499999761581421,
+      "score_weight_bias": 0.02
+    }
+  },
+  "red_fox": {
+    "male": {
+      "low_weight": 2.4200000762939453,
+      "high_weight": 15.399999618530273,
+      "weight_range": 12.979999542236328,
+      "score_weight_bias": 0.77
+    },
+    "female": {
+      "low_weight": 1.9800000190734863,
+      "high_weight": 12.600000381469727,
+      "weight_range": 10.62000036239624,
+      "score_weight_bias": 0.63
+    }
+  },
+  "black_bear": {
+    "female": {
+      "low_weight": 40.0,
+      "high_weight": 145.0,
+      "weight_range": 105.0,
+      "score_weight_bias": 7.25
+    },
+    "male": {
+      "low_weight": 57.0,
+      "high_weight": 290.0,
+      "weight_range": 233.0,
+      "score_weight_bias": 14.5
+    }
+  },
+  "saltwater_crocodile": {
+    "female": {
+      "low_weight": 125.0,
+      "high_weight": 200.0,
+      "weight_range": 75.0,
+      "score_weight_bias": 10.0
+    },
+    "male": {
+      "low_weight": 350.0,
+      "high_weight": 1100.0,
+      "weight_range": 750.0,
+      "score_weight_bias": 55.0
+    }
+  },
+  "willow_ptarmigan": {
+    "male": {
+      "low_weight": 0.4300000071525574,
+      "high_weight": 0.8100000023841858,
+      "weight_range": 0.3799999952316284,
+      "score_weight_bias": 0.04
+    },
+    "female": {
+      "low_weight": 0.4300000071525574,
+      "high_weight": 0.7900000214576721,
+      "weight_range": 0.36000001430511475,
+      "score_weight_bias": 0.04
+    }
+  },
+  "lion": {
+    "female": {
+      "low_weight": 135.0,
+      "high_weight": 200.0,
+      "weight_range": 65.0,
+      "score_weight_bias": 10.0
+    },
+    "male": {
+      "low_weight": 170.0,
+      "high_weight": 270.0,
+      "weight_range": 100.0,
+      "score_weight_bias": 13.5
+    }
+  },
+  "cinnamon_teal": {
+    "male": {
+      "low_weight": 0.3799999952316284,
+      "high_weight": 0.47999998927116394,
+      "weight_range": 0.09999999403953552,
+      "score_weight_bias": 0.02
+    },
+    "female": {
+      "low_weight": 0.30000001192092896,
+      "high_weight": 0.4000000059604645,
+      "weight_range": 0.09999999403953552,
+      "score_weight_bias": 0.02
+    }
+  },
+  "prong_horn": {
+    "female": {
+      "low_weight": 35.0,
+      "high_weight": 50.0,
+      "weight_range": 15.0,
+      "score_weight_bias": 2.5
+    },
+    "male": {
+      "low_weight": 40.0,
+      "high_weight": 65.0,
+      "weight_range": 25.0,
+      "score_weight_bias": 3.25
+    }
+  },
+  "pheasant": {
+    "female": {
+      "low_weight": 0.5,
+      "high_weight": 1.25,
+      "weight_range": 0.75,
+      "score_weight_bias": 0.06
+    },
+    "male": {
+      "low_weight": 0.75,
+      "high_weight": 3.0,
+      "weight_range": 2.25,
+      "score_weight_bias": 0.15
+    }
+  },
+  "eastern_wild_turkey": {
+    "male": {
+      "low_weight": 6.800000190734863,
+      "high_weight": 11.0,
+      "weight_range": 4.199999809265137,
+      "score_weight_bias": 0.55
+    },
+    "female": {
+      "low_weight": 3.5999999046325684,
+      "high_weight": 5.400000095367432,
+      "weight_range": 1.8000001907348633,
+      "score_weight_bias": 0.27
+    }
+  },
+  "blackbuck": {
+    "male": {
+      "low_weight": 34.0,
+      "high_weight": 51.0,
+      "weight_range": 17.0,
+      "score_weight_bias": 2.55
+    }
+  },
+  "eu_hare": {
+    "female": {
+      "low_weight": 2.0,
+      "high_weight": 7.0,
+      "weight_range": 5.0,
+      "score_weight_bias": 0.35
+    },
+    "male": {
+      "low_weight": 2.0,
+      "high_weight": 4.0,
+      "weight_range": 2.0,
+      "score_weight_bias": 0.2
+    }
+  },
+  "mountain_hare": {
+    "female": {
+      "low_weight": 2.0,
+      "high_weight": 6.0,
+      "weight_range": 4.0,
+      "score_weight_bias": 0.3
+    },
+    "male": {
+      "low_weight": 2.0,
+      "high_weight": 4.0,
+      "weight_range": 2.0,
+      "score_weight_bias": 0.2
+    }
+  },
+  "gray_wolf": {
+    "male": {
+      "low_weight": 45.0,
+      "high_weight": 80.0,
+      "weight_range": 35.0,
+      "score_weight_bias": 4.0
+    },
+    "female": {
+      "low_weight": 30.0,
+      "high_weight": 60.0,
+      "weight_range": 30.0,
+      "score_weight_bias": 3.0
+    }
+  },
+  "western_capercaillie": {
+    "female": {
+      "low_weight": 1.5,
+      "high_weight": 2.5,
+      "weight_range": 1.0,
+      "score_weight_bias": 0.12
+    },
+    "male": {
+      "low_weight": 3.5999999046325684,
+      "high_weight": 5.0,
+      "weight_range": 1.4000000953674316,
+      "score_weight_bias": 0.25
+    }
+  },
+  "moose": {
+    "male": {
+      "low_weight": 400.0,
+      "high_weight": 620.0,
+      "weight_range": 220.0,
+      "score_weight_bias": 31.0
+    }
+  },
+  "blue_wildebeest": {
+    "female": {
+      "low_weight": 190.0,
+      "high_weight": 260.0,
+      "weight_range": 70.0,
+      "score_weight_bias": 13.0
+    },
+    "male": {
+      "low_weight": 200.0,
+      "high_weight": 290.0,
+      "weight_range": 90.0,
+      "score_weight_bias": 14.5
+    }
+  },
+  "caribou": {
+    "female": {
+      "low_weight": 75.0,
+      "high_weight": 125.0,
+      "weight_range": 50.0,
+      "score_weight_bias": 6.25
+    },
+    "male": {
+      "low_weight": 150.0,
+      "high_weight": 190.0,
+      "weight_range": 40.0,
+      "score_weight_bias": 9.5
+    }
+  },
+  "siberian_musk_deer": {
+    "male": {
+      "low_weight": 7.0,
+      "high_weight": 17.0,
+      "weight_range": 10.0,
+      "score_weight_bias": 0.85
+    }
+  },
+  "american_alligator": {
+    "female": {
+      "low_weight": 75.0,
+      "high_weight": 145.0,
+      "weight_range": 70.0,
+      "score_weight_bias": 7.25
+    },
+    "male": {
+      "low_weight": 200.0,
+      "high_weight": 530.0,
+      "weight_range": 330.0,
+      "score_weight_bias": 26.5
+    }
+  },
+  "water_buffalo": {
+    "male": {
+      "low_weight": 680.0,
+      "high_weight": 1250.0,
+      "weight_range": 570.0,
+      "score_weight_bias": 62.5
+    },
+    "female": {
+      "low_weight": 520.0,
+      "high_weight": 1025.0,
+      "weight_range": 505.0,
+      "score_weight_bias": 51.25
+    }
+  },
+  "goldeneye": {
+    "male": {
+      "low_weight": 0.6000000238418579,
+      "high_weight": 1.2999999523162842,
+      "weight_range": 0.6999999284744263,
+      "score_weight_bias": 0.06
+    },
+    "female": {
+      "low_weight": 0.6000000238418579,
+      "high_weight": 1.100000023841858,
+      "weight_range": 0.5,
+      "score_weight_bias": 0.06
+    }
+  },
+  "northern_bobwhite_quail": {
+    "male": {
+      "low_weight": 0.12999999523162842,
+      "high_weight": 0.25,
+      "weight_range": 0.12000000476837158,
+      "score_weight_bias": 0.01
+    },
+    "female": {
+      "low_weight": 0.12999999523162842,
+      "high_weight": 0.17499999701976776,
+      "weight_range": 0.04500000178813934,
+      "score_weight_bias": 0.01
+    }
+  },
+  "stubble_quail": {
+    "male": {
+      "low_weight": 0.09000000357627869,
+      "high_weight": 0.12999999523162842,
+      "weight_range": 0.03999999165534973,
+      "score_weight_bias": 0.01
+    },
+    "female": {
+      "low_weight": 0.09000000357627869,
+      "high_weight": 0.12999999523162842,
+      "weight_range": 0.03999999165534973,
+      "score_weight_bias": 0.01
+    }
+  },
+  "mule_deer": {
+    "male": {
+      "low_weight": 100.0,
+      "high_weight": 210.0,
+      "weight_range": 110.0,
+      "score_weight_bias": 10.5
+    }
+  },
+  "eastern_grey_kangaroo": {
+    "female": {
+      "low_weight": 17.0,
+      "high_weight": 40.0,
+      "weight_range": 23.0,
+      "score_weight_bias": 2.0
+    },
+    "male": {
+      "low_weight": 50.0,
+      "high_weight": 66.0,
+      "weight_range": 16.0,
+      "score_weight_bias": 3.3
+    }
+  },
+  "rock_ptarmigan": {
+    "male": {
+      "low_weight": 0.4399999976158142,
+      "high_weight": 0.7400000095367432,
+      "weight_range": 0.30000001192092896,
+      "score_weight_bias": 0.04
+    },
+    "female": {
+      "low_weight": 0.4300000071525574,
+      "high_weight": 0.699999988079071,
+      "weight_range": 0.26999998092651367,
+      "score_weight_bias": 0.03
+    }
+  },
+  "green_wing_teal": {
+    "male": {
+      "low_weight": 0.30000001192092896,
+      "high_weight": 0.5,
+      "weight_range": 0.19999998807907104,
+      "score_weight_bias": 0.03
+    },
+    "female": {
+      "low_weight": 0.30000001192092896,
+      "high_weight": 0.44999998807907104,
+      "weight_range": 0.1499999761581421,
+      "score_weight_bias": 0.02
+    }
+  },
+  "iberian_wolf": {
+    "male": {
+      "low_weight": 35.0,
+      "high_weight": 50.0,
+      "weight_range": 15.0,
+      "score_weight_bias": 2.5
+    },
+    "female": {
+      "low_weight": 30.0,
+      "high_weight": 40.0,
+      "weight_range": 10.0,
+      "score_weight_bias": 2.0
+    }
+  },
+  "sambar": {
+    "male": {
+      "low_weight": 250.0,
+      "high_weight": 300.0,
+      "weight_range": 50.0,
+      "score_weight_bias": 15.0
+    }
+  },
+  "sika_deer": {
+    "male": {
+      "low_weight": 30.0,
+      "high_weight": 75.0,
+      "weight_range": 45.0,
+      "score_weight_bias": 3.75
+    }
+  },
+  "canada_goose": {
+    "male": {
+      "low_weight": 3.5,
+      "high_weight": 9.199999809265137,
+      "weight_range": 5.699999809265137,
+      "score_weight_bias": 0.46
+    },
+    "female": {
+      "low_weight": 3.200000047683716,
+      "high_weight": 6.800000190734863,
+      "weight_range": 3.6000001430511475,
+      "score_weight_bias": 0.34
+    }
+  },
+  "axis_deer": {
+    "male": {
+      "low_weight": 30.0,
+      "high_weight": 75.0,
+      "weight_range": 45.0,
+      "score_weight_bias": 3.75
+    }
+  },
+  "scrub_hare": {
+    "male": {
+      "low_weight": 1.899999976158142,
+      "high_weight": 5.099999904632568,
+      "weight_range": 3.1999999284744263,
+      "score_weight_bias": 0.25
+    },
+    "female": {
+      "low_weight": 1.5,
+      "high_weight": 5.800000190734863,
+      "weight_range": 4.300000190734863,
+      "score_weight_bias": 0.29
+    }
+  },
+  "bobcat": {
+    "female": {
+      "low_weight": 8.0,
+      "high_weight": 21.0,
+      "weight_range": 13.0,
+      "score_weight_bias": 1.05
+    },
+    "male": {
+      "low_weight": 18.0,
+      "high_weight": 45.0,
+      "weight_range": 27.0,
+      "score_weight_bias": 2.25
+    }
+  },
+  "gray_fox": {
+    "male": {
+      "low_weight": 3.5,
+      "high_weight": 6.800000190734863,
+      "weight_range": 3.3000001907348633,
+      "score_weight_bias": 0.34
+    },
+    "female": {
+      "low_weight": 3.0999999046325684,
+      "high_weight": 6.5,
+      "weight_range": 3.4000000953674316,
+      "score_weight_bias": 0.33
+    }
+  },
+  "greylag_goose": {
+    "female": {
+      "low_weight": 2.5,
+      "high_weight": 3.5,
+      "weight_range": 1.0,
+      "score_weight_bias": 0.18
+    },
+    "male": {
+      "low_weight": 2.5,
+      "high_weight": 4.0,
+      "weight_range": 1.5,
+      "score_weight_bias": 0.2
+    }
+  },
+  "eu_rabbit": {
+    "male": {
+      "low_weight": 1.100000023841858,
+      "high_weight": 2.5999999046325684,
+      "weight_range": 1.4999998807907104,
+      "score_weight_bias": 0.13
+    },
+    "female": {
+      "low_weight": 0.8999999761581421,
+      "high_weight": 1.7000000476837158,
+      "weight_range": 0.8000000715255737,
+      "score_weight_bias": 0.09
+    }
+  },
+  "eurasian_brown_bear": {
+    "male": {
+      "low_weight": 195.0,
+      "high_weight": 482.0,
+      "weight_range": 287.0,
+      "score_weight_bias": 24.1
+    },
+    "female": {
+      "low_weight": 110.0,
+      "high_weight": 340.0,
+      "weight_range": 230.0,
+      "score_weight_bias": 17.0
+    }
+  },
+  "eurasian_wigeon": {
+    "male": {
+      "low_weight": 0.5,
+      "high_weight": 0.949999988079071,
+      "weight_range": 0.44999998807907104,
+      "score_weight_bias": 0.05
+    },
+    "female": {
+      "low_weight": 0.5,
+      "high_weight": 0.800000011920929,
+      "weight_range": 0.30000001192092896,
+      "score_weight_bias": 0.04
+    }
+  },
+  "harlequin_duck": {
+    "male": {
+      "low_weight": 0.5799999833106995,
+      "high_weight": 0.75,
+      "weight_range": 0.17000001668930054,
+      "score_weight_bias": 0.04
+    },
+    "female": {
+      "low_weight": 0.47999998927116394,
+      "high_weight": 0.6800000071525574,
+      "weight_range": 0.20000001788139343,
+      "score_weight_bias": 0.03
+    }
+  },
+  "black_grouse": {
+    "female": {
+      "low_weight": 0.75,
+      "high_weight": 1.100000023841858,
+      "weight_range": 0.3500000238418579,
+      "score_weight_bias": 0.06
+    },
+    "male": {
+      "low_weight": 1.0,
+      "high_weight": 1.25,
+      "weight_range": 0.25,
+      "score_weight_bias": 0.06
+    }
+  },
+  "wild_boar": {
+    "male": {
+      "low_weight": 32.0,
+      "high_weight": 240.0,
+      "weight_range": 208.0,
+      "score_weight_bias": 12.0
+    },
+    "female": {
+      "low_weight": 25.0,
+      "high_weight": 168.0,
+      "weight_range": 143.0,
+      "score_weight_bias": 8.4
+    }
+  },
+  "hog_deer": {
+    "male": {
+      "low_weight": 39.0,
+      "high_weight": 50.0,
+      "weight_range": 11.0,
+      "score_weight_bias": 2.5
+    }
+  },
+  "roe_deer": {
+    "male": {
+      "low_weight": 18.0,
+      "high_weight": 35.0,
+      "weight_range": 17.0,
+      "score_weight_bias": 1.75
+    }
+  },
+  "mountain_goat": {
+    "male": {
+      "low_weight": 60.0,
+      "high_weight": 145.0,
+      "weight_range": 85.0,
+      "score_weight_bias": 7.25
+    },
+    "female": {
+      "low_weight": 45.0,
+      "high_weight": 105.0,
+      "weight_range": 60.0,
+      "score_weight_bias": 5.25
+    }
+  },
+  "whitetail_deer": {
+    "male": {
+      "low_weight": 59.0,
+      "high_weight": 100.0,
+      "weight_range": 41.0,
+      "score_weight_bias": 5.0
+    }
+  },
+  "eurasian_teal": {
+    "male": {
+      "low_weight": 0.3199999928474426,
+      "high_weight": 0.36000001430511475,
+      "weight_range": 0.04000002145767212,
+      "score_weight_bias": 0.02
+    },
+    "female": {
+      "low_weight": 0.30000001192092896,
+      "high_weight": 0.3400000035762787,
+      "weight_range": 0.03999999165534973,
+      "score_weight_bias": 0.02
+    }
+  },
+  "reindeer": {
+    "male": {
+      "low_weight": 159.0,
+      "high_weight": 182.0,
+      "weight_range": 23.0,
+      "score_weight_bias": 9.1
+    },
+    "female": {
+      "low_weight": 80.0,
+      "high_weight": 120.0,
+      "weight_range": 40.0,
+      "score_weight_bias": 6.0
+    }
+  },
+  "tufted_duck": {
+    "female": {
+      "low_weight": 0.6299999952316284,
+      "high_weight": 0.8999999761581421,
+      "weight_range": 0.26999998092651367,
+      "score_weight_bias": 0.04
+    },
+    "male": {
+      "low_weight": 0.75,
+      "high_weight": 1.0,
+      "weight_range": 0.25,
+      "score_weight_bias": 0.05
+    }
+  },
+  "plains_bison": {
+    "male": {
+      "low_weight": 450.0,
+      "high_weight": 1200.0,
+      "weight_range": 750.0,
+      "score_weight_bias": 60.0
+    },
+    "female": {
+      "low_weight": 350.0,
+      "high_weight": 550.0,
+      "weight_range": 200.0,
+      "score_weight_bias": 27.5
+    }
+  },
+  "rio_grande_turkey": {
+    "male": {
+      "low_weight": 6.800000190734863,
+      "high_weight": 11.0,
+      "weight_range": 4.199999809265137,
+      "score_weight_bias": 0.55
+    },
+    "female": {
+      "low_weight": 3.5999999046325684,
+      "high_weight": 5.400000095367432,
+      "weight_range": 1.8000001907348633,
+      "score_weight_bias": 0.27
+    }
+  },
+  "warthog": {
+    "female": {
+      "low_weight": 45.0,
+      "high_weight": 80.0,
+      "weight_range": 35.0,
+      "score_weight_bias": 4.0
+    },
+    "male": {
+      "low_weight": 60.0,
+      "high_weight": 150.0,
+      "weight_range": 90.0,
+      "score_weight_bias": 7.5
+    }
+  },
+  "wild_turkey": {
+    "female": {
+      "low_weight": 3.5999999046325684,
+      "high_weight": 5.400000095367432,
+      "weight_range": 1.8000001907348633,
+      "score_weight_bias": 0.27
+    },
+    "male": {
+      "low_weight": 6.800000190734863,
+      "high_weight": 11.0,
+      "weight_range": 4.199999809265137,
+      "score_weight_bias": 0.55
+    }
+  },
+  "javan_rusa": {
+    "male": {
+      "low_weight": 152.0,
+      "high_weight": 172.0,
+      "weight_range": 20.0,
+      "score_weight_bias": 8.6
+    }
+  },
+  "mexican_bobcat": {
+    "female": {
+      "low_weight": 8.0,
+      "high_weight": 21.0,
+      "weight_range": 13.0,
+      "score_weight_bias": 1.05
+    },
+    "male": {
+      "low_weight": 18.0,
+      "high_weight": 45.0,
+      "weight_range": 27.0,
+      "score_weight_bias": 2.25
+    }
+  },
+  "tundra_bean_goose": {
+    "male": {
+      "low_weight": 1.899999976158142,
+      "high_weight": 3.299999952316284,
+      "weight_range": 1.399999976158142,
+      "score_weight_bias": 0.16
+    },
+    "female": {
+      "low_weight": 1.899999976158142,
+      "high_weight": 2.799999952316284,
+      "weight_range": 0.8999999761581421,
+      "score_weight_bias": 0.14
+    }
+  },
+  "grizzly_bear": {
+    "female": {
+      "low_weight": 165.0,
+      "high_weight": 300.0,
+      "weight_range": 135.0,
+      "score_weight_bias": 15.0
+    },
+    "male": {
+      "low_weight": 225.0,
+      "high_weight": 680.0,
+      "weight_range": 455.0,
+      "score_weight_bias": 34.0
+    }
+  },
+  "blacktail_deer": {
+    "male": {
+      "low_weight": 50.0,
+      "high_weight": 95.0,
+      "weight_range": 45.0,
+      "score_weight_bias": 4.75
+    }
+  },
+  "iberian_mouflon": {
+    "male": {
+      "low_weight": 40.0,
+      "high_weight": 60.0,
+      "weight_range": 20.0,
+      "score_weight_bias": 3.0
+    }
+  },
+  "fallow_deer": {
+    "male": {
+      "low_weight": 101.0,
+      "high_weight": 140.0,
+      "weight_range": 39.0,
+      "score_weight_bias": 7.0
+    }
+  },
+  "roosevelt_elk": {
+    "male": {
+      "low_weight": 300.0,
+      "high_weight": 500.0,
+      "weight_range": 200.0,
+      "score_weight_bias": 25.0
+    }
+  },
+  "collared_peccary": {
+    "male": {
+      "low_weight": 16.0,
+      "high_weight": 31.0,
+      "weight_range": 15.0,
+      "score_weight_bias": 1.55
+    },
+    "female": {
+      "low_weight": 14.0,
+      "high_weight": 27.0,
+      "weight_range": 13.0,
+      "score_weight_bias": 1.35
+    }
+  },
+  "cape_buffalo": {
+    "female": {
+      "low_weight": 360.0,
+      "high_weight": 530.0,
+      "weight_range": 170.0,
+      "score_weight_bias": 26.5
+    },
+    "male": {
+      "low_weight": 600.0,
+      "high_weight": 950.0,
+      "weight_range": 350.0,
+      "score_weight_bias": 47.5
+    }
+  },
+  "mallard": {
+    "male": {
+      "low_weight": 0.949999988079071,
+      "high_weight": 2.0999999046325684,
+      "weight_range": 1.1499999165534973,
+      "score_weight_bias": 0.1
+    },
+    "female": {
+      "low_weight": 0.7200000286102295,
+      "high_weight": 1.600000023841858,
+      "weight_range": 0.8799999952316284,
+      "score_weight_bias": 0.08
+    }
+  },
+  "rockymountain_elk": {
+    "male": {
+      "low_weight": 280.0,
+      "high_weight": 480.0,
+      "weight_range": 200.0,
+      "score_weight_bias": 24.0
+    }
+  },
+  "puma": {
+    "female": {
+      "low_weight": 29.0,
+      "high_weight": 64.0,
+      "weight_range": 35.0,
+      "score_weight_bias": 3.2
+    },
+    "male": {
+      "low_weight": 65.0,
+      "high_weight": 105.0,
+      "weight_range": 40.0,
+      "score_weight_bias": 5.25
+    }
+  },
+  "gredos_ibex": {
+    "female": {
+      "low_weight": 35.0,
+      "high_weight": 70.0,
+      "weight_range": 35.0,
+      "score_weight_bias": 3.5
+    },
+    "male": {
+      "low_weight": 70.0,
+      "high_weight": 102.0,
+      "weight_range": 32.0,
+      "score_weight_bias": 5.1
+    }
+  }
+}
